@@ -154,3 +154,4 @@ theara:call-async
 theara:flow-router-breadcrumb
 theara:autoprint
 theara:reactive-list
+theara:numeral-helpers

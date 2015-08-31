@@ -6,14 +6,14 @@ aldeed:autoform@5.4.1
 aldeed:autoform-bs-datepicker@1.1.1
 aldeed:autoform-bs-datetimepicker@1.0.6
 aldeed:autoform-select2@2.0.2
-aldeed:collection2@2.3.3
+aldeed:collection2@2.5.0
 aldeed:simple-schema@1.3.3
 aldeed:tabular@1.2.0
 aldeed:template-extension@3.4.3
 amplify@1.0.0
 anti:fake@0.4.1
 anti:i18n@0.4.3
-arillo:flow-router-helpers@0.4.4_1
+arillo:flow-router-helpers@0.4.5
 autoupdate@1.2.1
 base64@1.0.3
 bigdsk:inputmask@3.1.63
@@ -67,8 +67,8 @@ ian:accounts-ui-bootstrap-3@1.2.77
 id-map@1.0.3
 jquery@1.11.3_2
 json@1.0.3
-kadira:blaze-layout@2.0.0
-kadira:flow-router@2.3.0
+kadira:blaze-layout@2.0.1
+kadira:flow-router@2.4.0
 launch-screen@1.0.2
 lbee:moment-helpers@1.2.0
 lepozepo:accounting@1.0.0
@@ -79,7 +79,7 @@ logging@1.0.7
 manuel:reactivearray@1.0.5
 markdown@1.0.4
 matb33:collection-hooks@0.7.14
-matteodem:easy-search@1.6.2
+matteodem:easy-search@1.6.3
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:aggregate@1.3.0
@@ -87,11 +87,11 @@ meteorhacks:async@1.0.0
 meteorhacks:collection-utils@1.2.0
 meteorhacks:fast-render@2.9.0
 meteorhacks:inject-data@1.4.0
-meteorhacks:kadira@2.23.0
+meteorhacks:kadira@2.23.1
 meteorhacks:meteorx@1.3.1
 meteorhacks:npm@1.4.0
 meteorhacks:picker@1.0.3
-meteorhacks:subs-manager@1.5.2
+meteorhacks:subs-manager@1.6.2
 meteorhacks:unblock@1.1.0
 minifiers@1.1.5
 minimongo@1.0.8
@@ -150,6 +150,7 @@ theara:flow-router-breadcrumb@0.2.7
 theara:id-generator@0.0.6
 theara:lightbox-helpers@0.0.6
 theara:moneyjs@0.0.2
+theara:numeral-helpers@0.0.1
 theara:reactive-list@0.2.8
 theara:relation-exist@0.0.1
 theara:round-khr@0.0.1
@@ -162,7 +163,7 @@ twbs:bootstrap@3.3.5
 u2622:persistent-session@0.4.1
 ui@1.0.6
 underscore@1.0.3
-underscorestring:underscore.string@3.1.1
+underscorestring:underscore.string@3.2.0
 url@1.0.4
 vsivsi:file-collection@1.2.0
 webapp@1.2.0

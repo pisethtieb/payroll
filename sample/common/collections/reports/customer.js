@@ -16,6 +16,11 @@ Sample.Schema.CustomerReport = new SimpleSchema({
         optional: true
     },
     date: {
-        type: String
+        type: String,
+        defaultValue: function () {
+            var start = moment().startOf('month').format('YYYY-MM-DD');
+            var current = moment().format('YYYY-MM-DD');
+            return start + ' To ' + current;
+        }
     }
 });

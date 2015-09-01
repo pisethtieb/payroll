@@ -98,10 +98,11 @@ lbee:moment-helpers
 aldeed:tabular
 matteodem:easy-search
 
-# Modal
+# Modal & Alert
 mizzao:bootboxjs
 ovcharik:alertifyjs
 czbaker:lightbox2
+juliancwirko:s-alert
 
 # File
 cfs:standard-packages

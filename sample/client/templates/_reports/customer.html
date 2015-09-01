@@ -38,23 +38,19 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <ul class="list-unstyled">
-                                <li><strong>Branch:</strong> {{branch}}</li>
-                                <li><strong>Name:</strong> {{name}}</li>
-                            </ul>
+                            <div><strong>Branch:</strong> {{branch}}</div>
+                            <div><strong>Name:</strong> {{name}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
-                            <ul class="list-unstyled">
-                                <li><strong>Date:</strong> {{date}}</li>
-                            </ul>
+                            <div><strong>Date:</strong> {{date}}</div>
                         </div>
                     </div>
                 {{/with}}
 
                 <!--Content-->
                 <table class="report-content">
-                    <thead class="header">
+                    <thead class="content-header">
                     <tr>
                         <th>No</th>
                         <th>ID</th>
@@ -66,7 +62,7 @@
                     </tr>
                     </thead>
 
-                    <tbody class="body">
+                    <tbody class="content-body">
                     {{#each content}}
                         <tr>
                             <td>{{index}}</td>
@@ -79,6 +75,12 @@
                         </tr>
                     {{/each}}
                     </tbody>
+
+                    <!--<tfoot class="content-footer">-->
+                    <!--<tr>-->
+                    <!--<td></td>-->
+                    <!--</tr>-->
+                    <!--</tfoot>-->
                 </table>
 
             {{/with}}

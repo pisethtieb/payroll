@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:autoprint',
-    version: '0.0.5',
+    version: '0.0.6',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.

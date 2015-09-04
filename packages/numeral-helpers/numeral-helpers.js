@@ -1,11 +1,11 @@
 if (Meteor.isClient) {
     // Format
-    Template.registerHelper('numeral', function (number, format) {
+    Template.registerHelper('numFormat', function (number, format) {
         return numeral(number).format(format);
     });
 
     // Unformat
-    Template.registerHelper('numeralUf', function (string) {
+    Template.registerHelper('numUnformat', function (string) {
         return numeral().unformat(string);
     });
 }

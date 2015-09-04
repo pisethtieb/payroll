@@ -20,16 +20,17 @@ Mongo.Collection.prototype.cacheCount = function (fieldName, collection, refFiel
 
             thisCollection.direct.update(selector, {$inc: fieldsInUpdate});
 
-            //console.log('Count->' + refCollection._name + '.after.insert()');
+            //console.log('Cache Count->' + refCollection._name + '.after.insert()');
         });
     });
 
     /********** After Update Reference Collection **********/
     refCollection.after.update(function (userId, doc, fieldNames, modifier, options) {
         var self = this;
-        modifier.$set = modifier.$set || {};
 
         Meteor.defer(function () {
+            modifier.$set = modifier.$set || {};
+
             if (!_.isUndefined(modifier.$set[refField])) {
                 if (modifier.$set[refField] != self.previous[refField]) {
                     var selectorDec = {},
@@ -49,7 +50,7 @@ Mongo.Collection.prototype.cacheCount = function (fieldName, collection, refFiel
                     fieldsInUpdateInc[cacheField] = 1;
                     thisCollection.direct.update(selectorInc, {$inc: fieldsInUpdateInc});
 
-                    //console.log('Count->' + refCollection._name + '.after.update()');
+                    //console.log('Cache Count->' + refCollection._name + '.after.update()');
                 }
             }
         });
@@ -68,7 +69,7 @@ Mongo.Collection.prototype.cacheCount = function (fieldName, collection, refFiel
 
             thisCollection.direct.update(selector, {$inc: fieldsInUpdate});
 
-            //console.log('Count->' + refCollection._name + '.after.remove()');
+            //console.log('Cache Count->' + refCollection._name + '.after.remove()');
         });
     });
 };

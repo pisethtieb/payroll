@@ -24,10 +24,6 @@ ejson
 twbs:bootstrap
 fortawesome:fontawesome
 
-# Library
-underscorestring:underscore.string
-erasaur:meteor-lodash
-
 # User
 ian:accounts-ui-bootstrap-3
 ongoworks:security
@@ -130,7 +126,10 @@ npm-container
 # Backup/Restore
 phirum:backup-restore
 
-# Other
+# Library
+underscorestring:underscore.string
+erasaur:meteor-lodash
+digilord:sugarjs
 ecwyne:mathjs
 lepozepo:accounting
 numeral:numeral

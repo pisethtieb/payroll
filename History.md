@@ -7,6 +7,7 @@ Meteor Cpanel for Rabbit Training Center.
 
 ## v2.0.5, 2015-09-08
 - update sample module
+- change `dateTime` to `exDate` field on `exchange`
 
 ## v2.0.4, 2015-09-04
 - update `cache collection`, add `sugar` package

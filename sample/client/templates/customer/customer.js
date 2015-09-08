@@ -5,7 +5,7 @@ var indexTpl = Template.sample_customer,
     insertTpl = Template.sample_customerInsert,
     updateTpl = Template.sample_customerUpdate,
     showTpl = Template.sample_customerShow,
-    addressAddonTpl = Template.sample_addressInsert;
+    locationAddonTpl = Template.sample_locationInsert;
 
 /**
  * Index
@@ -18,7 +18,7 @@ indexTpl.onCreated(function () {
     });
 
     // Create new  alertify
-    createNewAlertify(["customer", "address"]);
+    createNewAlertify(["customer", "location"]);
 });
 
 indexTpl.onRendered(function () {
@@ -86,9 +86,11 @@ insertTpl.onRendered(function () {
     configOnRender();
 });
 
+insertTpl.helpers({});
+
 insertTpl.events({
-    'click .addressAddon': function (e, t) {
-        alertify.address(fa("plus", "Address"), renderTemplate(addressAddonTpl))
+    'click .locationAddon': function (e, t) {
+        alertify.location(fa("plus", "Location"), renderTemplate(locationAddonTpl))
     }
 });
 
@@ -102,8 +104,8 @@ updateTpl.onRendered(function () {
 updateTpl.helpers({});
 
 updateTpl.events({
-    'click .addressAddon': function (e, t) {
-        alertify.address(fa("plus", "Address"), renderTemplate(addressAddonTpl));
+    'click .locationAddon': function (e, t) {
+        alertify.location(fa("plus", "Location"), renderTemplate(locationAddonTpl));
     }
 });
 
@@ -137,16 +139,16 @@ AutoForm.hooks({
             alertify.error(error.message);
         }
     },
-    // Address addon
-    sample_addressAddon: {
+    // Location addon
+    sample_locationAddon: {
         before: {
             insert: function (doc) {
-                doc._id = idGenerator.gen(Sample.Collection.Address, 3);
+                doc._id = idGenerator.gen(Sample.Collection.Location, 3);
                 return doc;
             }
         },
         onSuccess: function (formType, result) {
-            //alertify.address().close();
+            //alertify.location().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {
@@ -162,12 +164,12 @@ var configOnRender = function () {
     DateTimePicker.date(dob);
 
     // Remote select2
-    //$('[name="addressId"]').select2({
-    //    placeholder: "Search address",
+    //$('[name="locationId"]').select2({
+    //    placeholder: "Search location",
     //    allowClear: true,
     //    ajax: {
     //        url: function (param) {
-    //            var url = "/sample/addressRemote/" + param;
+    //            var url = "/sample/locationRemote/" + param;
     //            return url;
     //        },
     //        type: "GET",

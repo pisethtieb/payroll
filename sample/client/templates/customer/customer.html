@@ -32,19 +32,19 @@
                 {{> afQuickField name='gender'}}
                 {{> afQuickField name='dob'}}
 
-                <div class="form-group{{#if afFieldIsInvalid name='addressId'}} has-error{{/if}}" data-required="true">
-                    <label class="control-label" for="addressId">Address</label>
+                <div class="form-group{{#if afFieldIsInvalid name='locationId'}} has-error{{/if}}" data-required="true">
+                    <label class="control-label" for="locationId">Location</label>
 
                     <div class="input-group select2-bootstrap-append">
-                        {{> afFieldInput name='addressId'}}
+                        {{> afFieldInput name='locationId'}}
                         <span class="input-group-addon">
-                            <a href="#" class="addressAddon">
+                            <a href="#" class="locationAddon">
                                 {{fa "plus"}}
                             </a>
                         </span>
                     </div>
-                    {{#if afFieldIsInvalid name='addressId'}}
-                        <span class="help-block">{{afFieldMessage name='addressId'}}</span>
+                    {{#if afFieldIsInvalid name='locationId'}}
+                        <span class="help-block">{{afFieldMessage name='locationId'}}</span>
                     {{/if}}
                 </div>
 
@@ -70,19 +70,19 @@
                 {{> afQuickField name='gender'}}
                 {{> afQuickField name='dob'}}
 
-                <div class="form-group{{#if afFieldIsInvalid name='addressId'}} has-error{{/if}}" data-required="true">
-                    <label class="control-label" for="addressId">Address</label>
+                <div class="form-group{{#if afFieldIsInvalid name='locationId'}} has-error{{/if}}" data-required="true">
+                    <label class="control-label" for="locationId">Location</label>
 
                     <div class="input-group  select2-bootstrap-append">
-                        {{> afFieldInput name='addressId'}}
+                        {{> afFieldInput name='locationId'}}
                         <span class="input-group-addon">
-                            <a href="#" class="addressAddon">
+                            <a href="#" class="locationAddon">
                                 {{fa "plus"}}
                             </a>
                         </span>
                     </div>
-                    {{#if afFieldIsInvalid name='addressId'}}
-                        <span class="help-block">{{afFieldMessage name='addressId'}}</span>
+                    {{#if afFieldIsInvalid name='locationId'}}
+                        <span class="help-block">{{afFieldMessage name='locationId'}}</span>
                     {{/if}}
                 </div>
 
@@ -106,7 +106,7 @@
         <li><strong>Name:</strong> {{name}}</li>
         <li><strong>Gender:</strong> {{gender}}</li>
         <li><strong>Date of Birth:</strong> {{dob}}</li>
-        <li><strong>Address:</strong> {{address}}</li>
+        <li><strong>Location:</strong> {{location}}</li>
         <li><strong>Telephone:</strong> {{telephone}}</li>
         <li><strong>Email:</strong> {{email}}</li>
         <li><strong>Photo:</strong> {{lightbox url=photoUrl title=name}}</li>

@@ -1,7 +1,7 @@
-// Address
-Sample.TabularTable.Address = new Tabular.Table({
-    name: "sample_addressList",
-    collection: Sample.Collection.Address,
+// Location
+Sample.TabularTable.Location = new Tabular.Table({
+    name: "sample_locationList",
+    collection: Sample.Collection.Location,
     pagingType: "full_numbers",
     autoWidth: false,
     columnDefs: [
@@ -9,7 +9,7 @@ Sample.TabularTable.Address = new Tabular.Table({
     ],
     order: [['1', 'desc']],
     columns: [
-        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.sample_addressAction},
+        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.sample_locationAction},
         {data: "_id", title: "ID"},
         {data: "name", title: "Name"},
         {data: "_customerCount", title: "Customer Count"}

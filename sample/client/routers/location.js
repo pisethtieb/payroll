@@ -1,20 +1,20 @@
 var subs = new SubsManager();
 
-sampleRoutes.route('/address', {
-    name: 'sample.address',
+sampleRoutes.route('/location', {
+    name: 'sample.location',
     subscriptions: function (params, queryParams) {
         this.register(
-            'sample_address',
-            subs.subscribe('sample_address')
+            'sample_location',
+            subs.subscribe('sample_location')
         );
     },
     action: function (params, queryParams) {
-        Layout.main('sample_address');
+        Layout.main('sample_location');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'Address',
+        title: 'Location',
         parent: 'sample.home'
     }
 });

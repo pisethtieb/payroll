@@ -5,8 +5,8 @@ sampleRoutes.route('/customer', {
     subscriptions: function (params, queryParams) {
         // Customer
         //this.register('sample_customer', subs.subscribe('sample_customer', Session.get('currentBranch')));
-        // Address
-        this.register('sample_address', subs.subscribe('sample_address'));
+        // Location
+        this.register('sample_location', subs.subscribe('sample_location'));
     },
     action: function (params, queryParams) {
         Layout.main('sample_customer');

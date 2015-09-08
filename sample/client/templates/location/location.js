@@ -1,18 +1,18 @@
-var indexTpl = Template.sample_address,
-    insertTpl = Template.sample_addressInsert,
-    updateTpl = Template.sample_addressUpdate,
-    showTpl = Template.sample_addressShow;
+var indexTpl = Template.sample_location,
+    insertTpl = Template.sample_locationInsert,
+    updateTpl = Template.sample_locationUpdate,
+    showTpl = Template.sample_locationShow;
 
 // Index
 indexTpl.onCreated(function () {
     // SEO
     SEO.set({
-        title: 'Address',
+        title: 'Location',
         description: 'Description for this page'
     });
 
     // Create new  alertify
-    createNewAlertify("address");
+    createNewAlertify("location");
 });
 
 indexTpl.onRendered(function () {
@@ -27,20 +27,20 @@ indexTpl.helpers({
 
 indexTpl.events({
     'click .insert': function (e, t) {
-        alertify.address(fa("plus", "Address"), renderTemplate(insertTpl));
+        alertify.location(fa("plus", "Location"), renderTemplate(insertTpl));
     },
     'click .update': function (e, t) {
-        var data = Sample.Collection.Address.findOne(this._id);
-        alertify.address(fa("pencil", "Address"), renderTemplate(updateTpl, data));
+        var data = Sample.Collection.Location.findOne(this._id);
+        alertify.location(fa("pencil", "Location"), renderTemplate(updateTpl, data));
     },
     'click .remove': function (e, t) {
         var self = this;
 
         alertify.confirm(
-            fa("remove", "Address"),
+            fa("remove", "Location"),
             "Are you sure to delete [" + self._id + "]?",
             function () {
-                Sample.Collection.Address.softRemove(self._id, function (error) {
+                Sample.Collection.Location.softRemove(self._id, function (error) {
                     if (error) {
                         alertify.error(error.message);
                     } else {
@@ -53,8 +53,8 @@ indexTpl.events({
 
     },
     'click .show': function (e, t) {
-        var data = Sample.Collection.Address.findOne({_id: this._id});
-        alertify.alert(fa("eye", "Address"), renderTemplate(showTpl, data));
+        var data = Sample.Collection.Location.findOne({_id: this._id});
+        alertify.alert(fa("eye", "Location"), renderTemplate(showTpl, data));
     }
 });
 
@@ -82,10 +82,10 @@ updateTpl.events({
 
 // Hook
 AutoForm.hooks({
-    sample_addressInsert: {
+    sample_locationInsert: {
         before: {
             insert: function (doc) {
-                doc._id = idGenerator.gen(Sample.Collection.Address, 4);
+                doc._id = idGenerator.gen(Sample.Collection.Location, 4);
                 return doc;
             }
         },
@@ -96,9 +96,9 @@ AutoForm.hooks({
             alertify.error(error.message);
         }
     },
-    sample_addressUpdate: {
+    sample_locationUpdate: {
         onSuccess: function (formType, result) {
-            alertify.address().close();
+            alertify.location().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {

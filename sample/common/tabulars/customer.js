@@ -14,10 +14,10 @@ Sample.TabularTable.Customer = new Tabular.Table({
         {data: "name", title: "Name"},
         {data: "gender", title: "Gender"},
         {data: "dob", title: "Date of Birth"},
-        {data: "addressId", title: "Address ID"},
+        {data: "locationId", title: "Location ID"},
         {
-            data: "_address",
-            title: "Address Info",
+            data: "_location",
+            title: "Location Info",
             render: function (val, type, doc) {
                 return JSON.stringify(val, null, ' ');
             }

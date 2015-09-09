@@ -163,6 +163,37 @@ var configOnRender = function () {
     var dob = $('[name="dob"]');
     DateTimePicker.date(dob);
 
+    $('[name="locationId"]').select2({
+        placeholder: "Search location",
+        allowClear: true,
+        minimumInputLength: 3,
+        ajax: {
+            transport: function (params, success, failure) {
+                Meteor.call('school_listAddress', params.data, function (err, results) {
+                    if (err) {
+                        failure(err);
+                        return;
+                    }
+
+                    success(results);
+                });
+            },
+            processResults: function (data) {
+                var results = [];
+                _.each(data.results, function (result) {
+                    results.push({
+                        id: result._id,
+                        text: result.name
+                    });
+                });
+
+                return {
+                    results: results
+                };
+            }
+        }
+    });
+
     // Remote select2
     //$('[name="locationId"]').select2({
     //    placeholder: "Search location",

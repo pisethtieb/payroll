@@ -67,6 +67,7 @@ sacha:spin
 # Method
 simple:reactive-method
 okgrow:promise
+msavin:fetcher
 
 # Factory, Faker
 digilord:faker

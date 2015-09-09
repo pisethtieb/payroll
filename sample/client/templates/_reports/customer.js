@@ -31,13 +31,21 @@ genTpl.helpers({
         //FlowRouter.watchPathChange();
         var q = FlowRouter.current().queryParams;
 
-        var callId = JSON.stringify(q);
-        var call = Meteor.callAsync(callId, 'sample_customerReport', q);
+        // Use Fetcher
+        Fetcher.setDefault("data", false);
+        Fetcher.retrieve('data', 'sample_customerReport', q);
 
-        if (!call.ready()) {
-            return false;
-        }
+        return Fetcher.get('data');
 
-        return call.result();
+
+        // Use Call Async
+        //var callId = JSON.stringify(q);
+        //var call = Meteor.callAsync(callId, 'sample_customerReport', q);
+        //
+        //if (!call.ready()) {
+        //    return false;
+        //}
+        //
+        //return call.result();
     }
 });

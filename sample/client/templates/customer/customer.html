@@ -74,7 +74,7 @@
                     <label class="control-label" for="locationId">Location</label>
 
                     <div class="input-group  select2-bootstrap-append">
-                        {{> afFieldInput name='locationId'}}
+                        {{> afFieldInput name='locationId' options=defaultLocation value=this.locationId}}
                         <span class="input-group-addon">
                             <a href="#" class="locationAddon">
                                 {{fa "plus"}}

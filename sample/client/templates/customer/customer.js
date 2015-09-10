@@ -101,7 +101,13 @@ updateTpl.onRendered(function () {
     configOnRender();
 });
 
-updateTpl.helpers({});
+updateTpl.helpers({
+    defaultLocation: function () {
+        return [
+            {label: 'New Phone', value: '0007'}
+        ]
+    }
+});
 
 updateTpl.events({
     'click .locationAddon': function (e, t) {
@@ -168,28 +174,30 @@ var configOnRender = function () {
         allowClear: true,
         minimumInputLength: 3,
         ajax: {
-            transport: function (params, success, failure) {
-                Meteor.call('school_listAddress', params.data, function (err, results) {
+            data: function (params) {
+                return params;
+            },
+            transport: function (args) {
+                // Meteor method call
+                Meteor.call('school_listAddress', args.data, function (err, results) {
                     if (err) {
-                        failure(err);
+                        args.error(err);
                         return;
                     }
 
-                    success(results);
+                    args.success(results);
                 });
             },
-            processResults: function (data) {
+            results: function (data) {
                 var results = [];
-                _.each(data.results, function (result) {
+                _.each(data, function (result) {
                     results.push({
-                        id: result._id,
-                        text: result.name
+                        id: result.value,
+                        text: result.label
                     });
                 });
 
-                return {
-                    results: results
-                };
+                return {results: results};
             }
         }
     });

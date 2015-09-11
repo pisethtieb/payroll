@@ -140,6 +140,9 @@ rzymek:fullcalendar
 #froatsnook:sleep
 meteorhacks:kadira
 
+# Backup/Restore
+hitchcott:app-dump
+
 ######
 # Local
 ######

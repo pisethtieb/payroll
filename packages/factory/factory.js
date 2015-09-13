@@ -30,11 +30,12 @@ Factory._get = function (name) {
 };
 
 Factory.create = function (name, newAttr) {
+    var newAttrTmp = newAttr || {};
     var factory = this._get(name);
     var collection = factory.collection;
 
     // Allow to overwrite the attribute definitions
-    var attr = _.merge({}, factory.attributes, newAttr);
+    var attr = _.merge({}, attributesPrepare(factory.attributes), attributesPrepare(newAttrTmp));
 
     var docId = collection.insert(attr);
     var doc = collection.findOne(docId);
@@ -43,8 +44,36 @@ Factory.create = function (name, newAttr) {
 };
 
 Factory.build = function (name, newAttr) {
-    var factory = this._get(name);
+    var newAttrTmp = newAttr || {};
+    newAttrTmp = attributesPrepare(newAttrTmp);
 
-    var doc = _.merge({}, factory.attributes, newAttr);
+    var factory = this._get(name);
+    factory.attributes = attributesPrepare(factory.attributes);
+
+    console.log(factory.attributes);
+    console.log(attributesPrepare(factory.attributes));
+
+    var doc = _.merge({}, factory.attributes, newAttrTmp);
+
+    console.log(doc);
+
     return doc;
+};
+
+// Prepare attributes for callback params
+var attributesPrepare = function (attributes) {
+    if (!_.isObject(attributes)) {
+        throw new Error('Attributes must be object');
+    }
+
+    var tmpAttributes = {};
+    _.forEach(attributes, function (val, key) {
+        if (_.isFunction(val)) {
+            tmpAttributes[key] = val();
+        } else {
+            tmpAttributes[key] = val;
+        }
+    });
+
+    return tmpAttributes;
 };

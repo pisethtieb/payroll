@@ -1,6 +1,13 @@
+var branchId = '001';
+
 Factory.define('location', Sample.Collection.Location, {
-    _id: '0001',
-    name: faker.address.city()
+    _id: function () {
+        var locationId = idGenerator.gen(Sample.Collection.Location, 4);
+        return locationId;
+    },
+    name: function () {
+        return faker.address.city();
+    }
 });
 
 Factory.define('customer', Sample.Collection.Customer, {
@@ -17,5 +24,5 @@ Factory.define('customer', Sample.Collection.Customer, {
         var location = Factory.create('location');
         return location._id;
     },
-    cpanel_branchId: '001'
+    cpanel_branchId: branchId
 });

@@ -62,14 +62,18 @@ indexTpl.events({
         data.photoUrl = null;
 
         if (!_.isUndefined(data.photo)) {
-            data.photoUrl = Files.findOne(data.photo).url();
+            data.photoUrl = Files.findOne(data.photo)
+                .url();
         }
 
         alertify.alert(fa("eye", "Customer"), renderTemplate(showTpl, data));
     },
     'dblclick tbody > tr': function (event) {
-        var dataTable = $(event.target).closest('table').DataTable();
-        var rowData = dataTable.row(event.currentTarget).data();
+        var dataTable = $(event.target)
+            .closest('table')
+            .DataTable();
+        var rowData = dataTable.row(event.currentTarget)
+            .data();
 
         FlowRouter.go('sample.order', {customerId: rowData._id});
     }
@@ -101,13 +105,7 @@ updateTpl.onRendered(function () {
     configOnRender();
 });
 
-updateTpl.helpers({
-    defaultLocation: function () {
-        return [
-            {label: 'New Phone', value: '0007'}
-        ]
-    }
-});
+updateTpl.helpers({});
 
 updateTpl.events({
     'click .locationAddon': function (e, t) {
@@ -138,7 +136,8 @@ AutoForm.hooks({
     },
     sample_customerUpdate: {
         onSuccess: function (formType, result) {
-            alertify.customer().close();
+            alertify.customer()
+                .close();
             alertify.success('Success');
         },
         onError: function (formType, error) {
@@ -169,38 +168,39 @@ var configOnRender = function () {
     var dob = $('[name="dob"]');
     DateTimePicker.date(dob);
 
-    $('[name="locationId"]').select2({
-        placeholder: "Search location",
-        allowClear: true,
-        minimumInputLength: 3,
-        ajax: {
-            data: function (params) {
-                return params;
-            },
-            transport: function (args) {
-                // Meteor method call
-                Meteor.call('school_listAddress', args.data, function (err, results) {
-                    if (err) {
-                        args.error(err);
-                        return;
-                    }
+    $('[name="locationId"]')
+        .select2({
+            placeholder: "Search location",
+            allowClear: true,
+            minimumInputLength: 3,
+            ajax: {
+                data: function (params) {
+                    return params;
+                },
+                transport: function (args) {
+                    // Meteor method call
+                    Meteor.call('school_listAddress', args.data, function (err, results) {
+                        if (err) {
+                            args.error(err);
+                            return;
+                        }
 
-                    args.success(results);
-                });
-            },
-            results: function (data) {
-                var results = [];
-                _.each(data, function (result) {
-                    results.push({
-                        id: result.value,
-                        text: result.label
+                        args.success(results);
                     });
-                });
+                },
+                results: function (data) {
+                    var results = [];
+                    _.each(data, function (result) {
+                        results.push({
+                            id: result.value,
+                            text: result.label
+                        });
+                    });
 
-                return {results: results};
+                    return {results: results};
+                }
             }
-        }
-    });
+        });
 
     // Remote select2
     //$('[name="locationId"]').select2({

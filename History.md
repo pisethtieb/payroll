@@ -4,8 +4,11 @@ Meteor Cpanel for Rabbit Training Center.
 ## v.Next
 - add sample events track on report
 
+## v2.0.7, 2015-09-15
+- create `factory` package
+
 ## v2.0.6, 2015-09-11
-- add `app-dump`` package
+- add `app-dump` package
 
 ## v2.0.5, 2015-09-08
 - update sample module

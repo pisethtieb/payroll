@@ -12,14 +12,25 @@ Factory.define('location', Sample.Collection.Location, {
 
 Factory.define('customer', Sample.Collection.Customer, {
     _id: function () {
-        var customerId = idGenerator.genWithPrefix(Sample.Collection.Customer, branchId + '-', 6);
+        var customerId = idGenerator.genWithPrefix(Sample.Collection.Customer,
+            branchId + '-', 6);
         return customerId;
     },
-    name: faker.name.findName(),
-    gender: faker.random.arrayElement(['M', 'F']),
-    dob: moment(faker.date.past()).format('YYYY-MM-DD'),
-    telephone: faker.phone.phoneNumber(),
-    email: faker.internet.email(),
+    name: function () {
+        return faker.name.findName()
+    },
+    gender: function () {
+        return faker.random.arrayElement(['M', 'F']);
+    },
+    dob: function () {
+        return moment(faker.date.past()).format('YYYY-MM-DD');
+    },
+    telephone: function () {
+        return faker.phone.phoneNumber();
+    },
+    email: function () {
+        faker.internet.email();
+    },
     locationId: function () {
         var location = Factory.create('location');
         return location._id;

@@ -124,10 +124,13 @@ nilsdannemann:pdfmake
 meteorhacks:npm
 npm-container
 
-# Backup/Restore
-phirum:backup-restore
+# Viewmodel
+dalgard:viewmodel
 
-# Library
+# Backup/Restore
+hitchcott:app-dump
+
+# Others
 underscorestring:underscore.string
 erasaur:meteor-lodash
 digilord:sugarjs
@@ -139,9 +142,6 @@ natestrauser:animate-css
 rzymek:fullcalendar
 #froatsnook:sleep
 meteorhacks:kadira
-
-# Backup/Restore
-hitchcott:app-dump
 
 ######
 # Local

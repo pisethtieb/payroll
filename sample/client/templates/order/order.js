@@ -75,7 +75,7 @@ indexTpl.onDestroyed(function () {
 
 // Insert
 insertTpl.onRendered(function () {
-    datePicker();
+    configOnRendered();
 });
 
 insertTpl.helpers({
@@ -105,7 +105,7 @@ insertTpl.onDestroyed(function () {
 
 // Update
 updateTpl.onRendered(function () {
-    datePicker();
+    configOnRendered();
 });
 
 updateTpl.helpers({});
@@ -177,9 +177,9 @@ AutoForm.hooks({
 });
 
 // Config date picker
-var datePicker = function () {
-    var dob = $('[name="orderDate"]');
-    DateTimePicker.date(dob);
+var configOnRendered = function () {
+    var orderDate = $('[name="orderDate"]');
+    DateTimePicker.date(orderDate);
 };
 
 // Customer search

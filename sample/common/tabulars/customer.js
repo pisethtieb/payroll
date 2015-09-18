@@ -13,7 +13,13 @@ Sample.TabularTable.Customer = new Tabular.Table({
         {data: "_id", title: "ID"},
         {data: "name", title: "Name"},
         {data: "gender", title: "Gender"},
-        {data: "dob", title: "Date of Birth"},
+        {
+            data: "dob",
+            title: "Date of Birth",
+            render: function (val, type, doc) {
+                return moment(val).format('YYYY-MM-DD');
+            }
+        },
         {data: "locationId", title: "Location ID"},
         {
             data: "_location",

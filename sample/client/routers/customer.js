@@ -6,7 +6,7 @@ sampleRoutes.route('/customer', {
         // Customer
         //this.register('sample_customer', subs.subscribe('sample_customer', Session.get('currentBranch')));
         // Location
-        this.register('sample_location', subs.subscribe('sample_location'));
+        //this.register('sample_location', subs.subscribe('sample_location'));
     },
     action: function (params, queryParams) {
         Layout.main('sample_customer');

@@ -272,8 +272,11 @@ Template.templateName.onRendered(function(){
 ```js
 // Use with bootbox
 var data = {name: value, gender: value};
+var tmpl = renderTemplate(Template.rabbit_testShow, data);
+// return object = {html: ..., instance: ...}
+
 bootbox.dialog({
-            message: renderTemplate(Template.rabbit_testShow, data),
+            message: tmpl.html,
             title: "Title"
         });
 ```
@@ -347,7 +350,8 @@ bootbox.dialog({
 
 ```js
 // How to use custom
-createNewAlertify("customer"); // Call in template create
+createNewAlertify("customer", [transition]);
+alertify.customer(Title, Message); // Message = renderTemmplate(...);
 
 alertify.customer("<i class='fa fa-plus'></i> Customer", renderTemplate(Template.sample_customerInsert))
     .maximize(); // auto full screen

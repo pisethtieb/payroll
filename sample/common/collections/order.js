@@ -4,16 +4,13 @@ Sample.Collection.Order = new Mongo.Collection("sample_order");
 // Schema
 Sample.Schema.Order = new SimpleSchema({
     orderDate: {
-        type: Date
+        type: Date,
+        defaultValue: function () {
+            return moment().format('YYYY-MM-DD');
+        }
     },
     customerId: {
         type: String
-        //autoform: {
-        //    type: "select2",
-        //    options: function () {
-        //        return Sample.List.customer();
-        //    }
-        //}
     },
     des: {
         type: String,

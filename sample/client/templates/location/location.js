@@ -22,6 +22,15 @@ indexTpl.onRendered(function () {
 indexTpl.helpers({
     selector: function () {
         return {};
+    },
+    tabularClass: function () {
+        var self = this;
+        var cssClass = 'table table-striped table-bordered table-condensed table-hover';
+        if (self.cssClass) {
+            cssClass += '-' + this.cssClass;
+        }
+
+        return cssClass;
     }
 });
 

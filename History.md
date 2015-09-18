@@ -4,6 +4,10 @@ Meteor Cpanel for Rabbit Training Center.
 ## v.Next
 - add sample events track on report
 
+## v2.0.8, 2015-09-18
+- update `renderTemplate()` // return object = {html: ..., instance: ...}
+- update `createNewAlertify()` // support `renderTemplate()` above
+
 ## v2.0.7, 2015-09-15
 - create `factory` package
 

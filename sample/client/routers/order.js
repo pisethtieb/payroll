@@ -4,10 +4,10 @@ sampleRoutes.route('/order/:customerId', {
     name: 'sample.order',
     subscriptions: function (params, queryParams) {
         // Order
-        this.register(
-            'sample_orderByCustomer',
-            subs.subscribe('sample_orderByCustomer', params.customerId)
-        );
+        //this.register(
+        //    'sample_orderByCustomer',
+        //    subs.subscribe('sample_orderByCustomer', params.customerId)
+        //);
         // Customer
         this.register(
             'sample_customerById',

@@ -86,6 +86,7 @@ tsega:bootstrap3-datetimepicker
 aldeed:autoform-bs-datetimepicker
 dburles:spacebars-tohtml
 raix:handlebar-helpers
+mpowaga:autoform-summernote
 
 # Date
 momentjs:moment

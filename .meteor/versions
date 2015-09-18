@@ -114,6 +114,7 @@ momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
 moonco:fixtures@0.1.6
+mpowaga:autoform-summernote@0.4.2
 msavin:fetcher@1.1.0
 natestrauser:animate-css@3.2.6
 natestrauser:select2@3.5.1
@@ -152,6 +153,7 @@ spacebars-compiler@1.0.6
 srp@1.0.3
 stevezhu:lodash@3.10.1
 stylus@1.0.7
+summernote:standalone@0.6.16
 templating@1.1.1
 theara:autoprint@0.0.6
 theara:call-async@0.1.8

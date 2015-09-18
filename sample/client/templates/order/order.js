@@ -38,10 +38,14 @@ indexTpl.events({
             .maximize();
     },
     'click .update': function (e, t) {
-        var data = Sample.Collection.Order.findOne(this._id);
+        Meteor.call('sample_orderById', this._id, function (error, result) {
+            if (!error) {
+                result.orderDate = moment(result.orderDate).format('YYYY-MM-DD');
 
-        alertify.order(fa("pencil", "Order"), renderTemplate(updateTpl, data))
-            .maximize();
+                alertify.order(fa("pencil", "Order"), renderTemplate(updateTpl, result))
+                    .maximize();
+            }
+        })
     },
     'click .remove': function (e, t) {
         var self = this;
@@ -63,9 +67,11 @@ indexTpl.events({
 
     },
     'click .show': function (e, t) {
-        var data = Sample.Collection.Order.findOne({_id: this._id});
-
-        alertify.alert(fa("eye", "Order"), renderTemplate(showTpl, data));
+        Meteor.call('sample_orderById', this._id, function (error, result) {
+            if (!error) {
+                alertify.alert(fa("eye", "Order"), renderTemplate(showTpl, result));
+            }
+        })
     }
 });
 

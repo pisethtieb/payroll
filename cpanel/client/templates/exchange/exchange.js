@@ -15,18 +15,16 @@ indexTpl.onCreated(function () {
 
 indexTpl.onRendered(function () {
     // Create new  alertify
-    createNewAlertify("exchange");
+    createNewAlertify("exchange", {size: 'lg'});
 });
 
 indexTpl.events({
     'click .insert': function (e, t) {
-        alertify.exchange(fa("plus", "Exchange"), renderTemplate(insertTpl))
-            .maximize();
+        alertify.exchange(fa("plus", "Exchange"), renderTemplate(insertTpl));
     },
     'click .update': function (e, t) {
         var data = Cpanel.Collection.Exchange.findOne(this._id);
-        alertify.exchange(fa("pencil", "Exchange"), renderTemplate(updateTpl, data))
-            .maximize();
+        alertify.exchange(fa("pencil", "Exchange"), renderTemplate(updateTpl, data));
     },
     'click .remove': function (e, t) {
         var id = this._id;
@@ -48,7 +46,7 @@ indexTpl.events({
     },
     'click .show': function (e, t) {
         this.ratesVal = JSON.stringify(this.rates);
-        alertify.alert(fa("eye", "Exchange"), renderTemplate(showTpl, this));
+        alertify.alert(fa("eye", "Exchange"), renderTemplate(showTpl, this).html);
     }
 });
 

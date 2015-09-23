@@ -11,7 +11,13 @@ Sample.TabularTable.Order = new Tabular.Table({
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.sample_orderAction},
         {data: "_id", title: "ID"},
-        {data: "orderDate", title: "Date"},
+        {
+            data: "orderDate",
+            title: "Date",
+            render: function (val, type, doc) {
+                return moment(val).format('YYYY-MM-DD');
+            }
+        },
         {data: "total", title: "Total"},
         {data: "des", title: "Description"}
         //{data: "customerId", title: "Customer ID"},

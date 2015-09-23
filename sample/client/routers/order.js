@@ -8,11 +8,6 @@ sampleRoutes.route('/order/:customerId', {
         //    'sample_orderByCustomer',
         //    subs.subscribe('sample_orderByCustomer', params.customerId)
         //);
-        // Customer
-        this.register(
-            'sample_customerById',
-            subs.subscribe('sample_customerById', params.customerId)
-        );
     },
     action: function (params, queryParams) {
         Layout.main('sample_order');

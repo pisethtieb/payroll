@@ -23,18 +23,18 @@
             </div>
         </div>
         <div class="col-sm-1">
-            <button type="button" class="btn btn-primary addItem" {{cssClassForAddMore}}>+</button>
+            <button type="button" class="btn btn-primary js-add-item" {{cssClassForAddMore}}>+</button>
         </div>
     </div>
     <hr>
     {{#each items}}
         <div class="row list">
-            <div class="col-sm-4">{{> afQuickField name=indexNmae value=name class="name" readonly="true" label=false}}</div>
-            <div class="col-sm-2">{{> afQuickField name=indexQty type="text" value=qty class="qty" label=false}}</div>
-            <div class="col-sm-2">{{> afQuickField name=indexPrice type="text" value=price class="price" label=false}}</div>
-            <div class="col-sm-3">{{> afQuickField name=indexAmount type="text" value=amount class="amount" readonly="true" label=false}}</div>
+            <div class="col-sm-4">{{> afQuickField name=indexNmae value=name class="js-name" readonly="true" label=false}}</div>
+            <div class="col-sm-2">{{> afQuickField name=indexQty type="text" value=qty class="js-qty" label=false}}</div>
+            <div class="col-sm-2">{{> afQuickField name=indexPrice type="text" value=price class="js-price" label=false}}</div>
+            <div class="col-sm-3">{{> afQuickField name=indexAmount type="text" value=amount class="js-amount" readonly="true" label=false}}</div>
             <div class="col-sm-1">
-                <button type="button" class="btn btn-danger removeItem">-</button>
+                <button type="button" class="btn btn-danger js-remove-item">-</button>
             </div>
         </div>
     {{/each}}

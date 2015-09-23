@@ -36,16 +36,5 @@ genTpl.helpers({
         Fetcher.retrieve('data', 'sample_customerReport', q);
 
         return Fetcher.get('data');
-
-
-        // Use Call Async
-        //var callId = JSON.stringify(q);
-        //var call = Meteor.callAsync(callId, 'sample_customerReport', q);
-        //
-        //if (!call.ready()) {
-        //    return false;
-        //}
-        //
-        //return call.result();
     }
 });

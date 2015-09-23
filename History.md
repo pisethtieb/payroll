@@ -4,6 +4,9 @@ Meteor Cpanel for Rabbit Training Center.
 ## v.Next
 - add sample events track on report
 
+## v2.1.0, 2015-09-21
+- create new template subscription ready helper `{{...templateSubReady "..."}}`
+
 ## v2.0.9, 2015-09-18
 - add `summary note` package for Auto Form
 

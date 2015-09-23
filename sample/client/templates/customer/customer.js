@@ -5,12 +5,15 @@ var indexTpl = Template.sample_customer,
     insertTpl = Template.sample_customerInsert,
     updateTpl = Template.sample_customerUpdate,
     showTpl = Template.sample_customerShow,
+
     locationAddOnTpl = Template.sample_locationAddOnCustomer;
 
 /**
  * State
  */
-var state = new ReactiveObj();
+var state = new ReactiveObj({
+    location: {}
+});
 
 /**
  * Index
@@ -23,8 +26,9 @@ indexTpl.onCreated(function () {
     });
 
     // Create new  alertify
-    createNewAlertify(["customer"]);
-    createNewAlertify(["locationAddon"], 'zoom');
+    createNewAlertify(["customer"], {size: 'lg'});
+    createNewAlertify(["customerShow"]);
+    createNewAlertify(["locationAddon"], {transition: 'zoom', size: 'lg'});
 });
 
 indexTpl.onRendered(function () {
@@ -34,20 +38,13 @@ indexTpl.onRendered(function () {
 indexTpl.helpers({});
 
 indexTpl.events({
-    'click .insert': function (e, t) {
-        alertify.customer(fa("plus", "Customer"), renderTemplate(insertTpl))
-            .maximize();
+    'click .js-insert': function (e, t) {
+        alertify.customer(fa("plus", "Customer"), renderTemplate(insertTpl));
     },
-    'click .update': function (e, t) {
-        Meteor.call('sample_customerById', this._id, function (error, result) {
-            if (!error) {
-                result.dob = moment(result.dob).format('YYYY-MM-DD');
-                alertify.customer(fa("pencil", "Customer"), renderTemplate(updateTpl, result))
-                    .maximize();
-            }
-        })
+    'click .js-update': function (e, t) {
+        alertify.customer(fa("pencil", "Customer"), renderTemplate(updateTpl, this));
     },
-    'click .remove': function (e, t) {
+    'click .js-remove': function (e, t) {
         var self = this;
 
         alertify.confirm(
@@ -64,14 +61,9 @@ indexTpl.events({
             },
             null
         );
-
     },
-    'click .show': function (e, t) {
-        Meteor.call('sample_customerById', this._id, function (error, result) {
-            if (!error) {
-                alertify.alert(fa("eye", "Customer"), renderTemplate(showTpl, result));
-            }
-        })
+    'click .js-show': function (e, t) {
+        alertify.customerShow(fa("eye", "Customer"), renderTemplate(showTpl, this));
     },
     'dblclick tbody > tr': function (event) {
         var dataTable = $(event.target)
@@ -88,7 +80,6 @@ indexTpl.events({
  * Insert
  */
 insertTpl.onRendered(function () {
-    state.set('location', {});
     configOnRender();
 });
 
@@ -99,38 +90,68 @@ insertTpl.helpers({
 });
 
 insertTpl.events({
-    'click .locationAddon': function (e, t) {
-        alertify.locationAddon(fa("plus", "Location"), renderTemplate(locationAddOnTpl))
-            .maximize();
+    'click .js-location-addon': function (e, t) {
+        alertify.locationAddon(fa("plus", "Location"), renderTemplate(locationAddOnTpl));
     }
 });
 
 insertTpl.onDestroyed(function () {
+    state.set('location', {});
 });
 
 /**
  * Update
  */
-updateTpl.onRendered(function () {
-    var dataUpdate = Template.currentData();
+updateTpl.onCreated(function () {
+    this.subscribe('sample_customerById', this.data._id);
     state.set('location', {
-        _id: dataUpdate.locationId,
-        name: dataUpdate._location.name
+        _id: this.data.locationId,
+        name: this.data._location.name
     });
+});
 
+updateTpl.onRendered(function () {
     configOnRender();
 });
 
 updateTpl.helpers({
     location: function () {
         return state.get('location');
+    },
+    data: function () {
+        var data = Sample.Collection.Customer.findOne(this._id);
+        data.dob = moment(data.dob).format('YYYY-MM-DD');
+        return data;
     }
 });
 
 updateTpl.events({
-    'click .locationAddon': function (e, t) {
-        alertify.locationAddon(fa("plus", "Location"), renderTemplate(locationAddOnTpl))
-            .maximize();
+    'click .js-location-addon': function (e, t) {
+        alertify.locationAddon(fa("plus", "Location"), renderTemplate(locationAddOnTpl));
+    }
+});
+
+updateTpl.onDestroyed(function () {
+    state.set('location', {});
+});
+
+/**
+ * Show
+ */
+showTpl.onCreated(function () {
+    this.subscribe('sample_customerById', this.data._id);
+});
+
+showTpl.helpers({
+    data: function () {
+        var data = Sample.Collection.Customer.findOne(this._id);
+        data.photoUrl = null;
+        if (data.photo) {
+            var photo = Files.findOne(data.photo);
+            data.photoUrl = photo.url();
+        }
+
+        return data;
     }
 });
 
@@ -172,24 +193,7 @@ AutoForm.hooks({
     },
     sample_customerUpdate: {
         onSuccess: function (formType, result) {
-            alertify.customer()
-                .close();
-            alertify.success('Success');
-        },
-        onError: function (formType, error) {
-            alertify.error(error.message);
-        }
-    },
-    // Location addon
-    sample_locationAddon: {
-        before: {
-            insert: function (doc) {
-                doc._id = idGenerator.gen(Sample.Collection.Location, 3);
-                return doc;
-            }
-        },
-        onSuccess: function (formType, result) {
-            //alertify.location().close();
+            alertify.customer().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {
@@ -238,27 +242,4 @@ var configOnRender = function () {
     //            }
     //        }
     //    });
-
-    // Remote select2 (URL)
-    //$('[name="locationId"]').select2({
-    //    placeholder: "Search location",
-    //    allowClear: true,
-    //    ajax: {
-    //        url: function (param) {
-    //            var url = "/sample/locationRemote/" + param;
-    //            return url;
-    //        },
-    //        type: "GET",
-    //        dataType: 'json',
-    //        delay: 250,
-    //        //data: function (param) {
-    //        //    return {term: param};
-    //        //},
-    //        results: function (data, page) {
-    //            return {results: data};
-    //        },
-    //        cache: true
-    //    },
-    //    minimumInputLength: 3
-    //});
 };

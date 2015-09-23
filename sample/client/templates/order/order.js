@@ -1,13 +1,16 @@
-// Declare template
+/**
+ * Declare template
+ */
 var indexTpl = Template.sample_order,
     insertTpl = Template.sample_orderInsert,
     updateTpl = Template.sample_orderUpdate,
     showTpl = Template.sample_orderShow,
 
-    customerSearchTpl = Template.sample_orderCustomerSearch,
-    customerAddonTpl = Template.sample_customerInsert;
+    customerShowTpl = Template.sample_customerShow;
 
-// Index
+/**
+ * Index
+ */
 indexTpl.onCreated(function () {
     // SEO
     SEO.set({
@@ -16,11 +19,12 @@ indexTpl.onCreated(function () {
     });
 
     // Create new  alertify
-    createNewAlertify(['order', 'customer', 'customerSearch']);
-});
+    createNewAlertify(['order'], {size: 'lg'});
+    createNewAlertify(['orderShow', 'customerShow']);
 
-indexTpl.onRendered(function () {
-    //
+    // Subscription
+    var customerId = FlowRouter.getParam('customerId');
+    this.subCustomer = this.subscribe('sample_customerById', customerId);
 });
 
 indexTpl.helpers({
@@ -33,19 +37,14 @@ indexTpl.helpers({
 });
 
 indexTpl.events({
+    'click .js-customerInfo': function (e, t) {
+        alertify.customerShow(fa("eye", "Customer"), renderTemplate(customerShowTpl, this));
+    },
     'click .insert': function (e, t) {
-        alertify.order(fa("plus", "Order"), renderTemplate(insertTpl))
-            .maximize();
+        alertify.order(fa("plus", "Order"), renderTemplate(insertTpl));
     },
     'click .update': function (e, t) {
-        Meteor.call('sample_orderById', this._id, function (error, result) {
-            if (!error) {
-                result.orderDate = moment(result.orderDate).format('YYYY-MM-DD');
-
-                alertify.order(fa("pencil", "Order"), renderTemplate(updateTpl, result))
-                    .maximize();
-            }
-        })
+        alertify.order(fa("pencil", "Order"), renderTemplate(updateTpl, this));
     },
     'click .remove': function (e, t) {
         var self = this;
@@ -67,19 +66,13 @@ indexTpl.events({
 
     },
     'click .show': function (e, t) {
-        Meteor.call('sample_orderById', this._id, function (error, result) {
-            if (!error) {
-                alertify.alert(fa("eye", "Order"), renderTemplate(showTpl, result));
-            }
-        })
+        alertify.orderShow(fa("eye", "Order"), renderTemplate(showTpl, this));
     }
 });
 
-indexTpl.onDestroyed(function () {
-    //
-});
-
-// Insert
+/**
+ * Insert
+ */
 insertTpl.onRendered(function () {
     configOnRendered();
 });
@@ -90,45 +83,37 @@ insertTpl.helpers({
     }
 });
 
-insertTpl.events({
-    'click [name="customerId"]': function (e, t) {
-        var val = $('[name="customerId"]').val();
-        var data = {data: val};
-
-        alertify.customerSearch(fa("list", "Customer Search List"), renderTemplate(customerSearchTpl, data));
-    },
-    'click .customerAddon': function (e, t) {
-        alertify.customer(fa("plus", "Customer"), renderTemplate(customerAddonTpl));
-    },
-    // Test search list change
-    'change [name="customerId"]': function () {
-        $('[name="des"]').val('Customer is changed');
-    }
+/**
+ * Update
+ */
+updateTpl.onCreated(function () {
+    this.subscribe('sample_orderById', this.data._id);
 });
 
-insertTpl.onDestroyed(function () {
-});
-
-// Update
 updateTpl.onRendered(function () {
     configOnRendered();
 });
 
-updateTpl.helpers({});
-
-updateTpl.events({
-    'click [name="customerId"]': function (e, t) {
-        var val = $('[name="customerId"]').val();
-        var data = {data: val};
-
-        alertify.customerSearch(fa("list", "Customer Search List"), renderTemplate(customerSearchTpl, data));
-    },
-    'click .customerAddon': function (e, t) {
-        alertify.customer(fa("plus", "Customer"), renderTemplate(customerAddonTpl));
+updateTpl.helpers({
+    data: function () {
+        var data = Sample.Collection.Order.findOne(this._id);
+        return data;
     }
 });
 
-updateTpl.onDestroyed(function () {
+/**
+ * Show
+ */
+showTpl.onCreated(function () {
+    this.subscribe('sample_orderById', this.data._id);
+});
+
+showTpl.helpers({
+    data: function () {
+        var data = Sample.Collection.Order.findOne(this._id);
+        data.desStr = Spacebars.SafeString(data.des);
+        return data;
+    }
 });
 
 // Hook
@@ -144,7 +129,7 @@ AutoForm.hooks({
             }
         },
         onSuccess: function (formType, result) {
-            itemsState.clear();
+            itemsStateList.clear(); // Clear items state list from item template
             alertify.success('Success');
         },
         onError: function (formType, error) {
@@ -163,22 +148,6 @@ AutoForm.hooks({
         onError: function (formType, error) {
             alertify.error(error.message);
         }
-    },
-    // Customer addon
-    sample_customerAddon: {
-        before: {
-            insert: function (doc) {
-                doc._id = idGenerator.gen(Sample.Collection.Customer, 3);
-                return doc;
-            }
-        },
-        onSuccess: function (formType, result) {
-            //alertify.customer().close();
-            alertify.success('Success');
-        },
-        onError: function (formType, error) {
-            alertify.error(error.message);
-        }
     }
 });
 
@@ -187,16 +156,6 @@ var configOnRendered = function () {
     var orderDate = $('[name="orderDate"]');
     DateTimePicker.date(orderDate);
 };
-
-// Customer search
-customerSearchTpl.events({
-    'click .item': function (e, t) {
-        $('[name="customerId"]').val(this._id);
-        $('[name="customerId"]').change();
-
-        alertify.customerSearch().close();
-    }
-});
 
 // Get current customer
 var getCurrentCustomer = function () {

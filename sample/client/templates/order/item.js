@@ -1,8 +1,12 @@
-// Declare template
+/**
+ * Declare template
+ */
 var itemTpl = Template.sample_orderItem;
 
-// Items state
-itemsState = new ReactiveList();
+/**
+ * Define state
+ */
+itemsStateList = new ReactiveList();
 var state = new ReactiveObj({
     qty: 0,
     price: 0,
@@ -13,18 +17,17 @@ var state = new ReactiveObj({
  * Items
  */
 itemTpl.onCreated(function () {
-    itemsState.clear();
+    itemsStateList.clear();
 
-    // Check form type
-    var data = Template.currentData();
-    if (!_.isUndefined(data)) {
-        _.each(data.items, function (obj, key) {
+    // Check items data
+    if (this.data) {
+        _.each(this.data, function (obj, key) {
             obj.indexNmae = 'items.' + key + '.name';
             obj.indexQty = 'items.' + key + '.qty';
             obj.indexPrice = 'items.' + key + '.price';
             obj.indexAmount = 'items.' + key + '.amount';
 
-            itemsState.insert(obj.name, obj);
+            itemsStateList.insert(obj.name, obj);
         });
     }
 });
@@ -49,11 +52,11 @@ itemTpl.helpers({
         return state.get('cssClassForAddMore');
     },
     items: function () {
-        return itemsState.fetch();
+        return itemsStateList.fetch();
     },
     total: function () {
         var totalVal = 0;
-        _.each(itemsState.fetch(), function (o) {
+        _.each(itemsStateList.fetch(), function (o) {
             totalVal += o.amount;
         });
 
@@ -74,7 +77,7 @@ itemTpl.events({
 
         state.set('price', price);
     },
-    'click .addItem': function (e, t) {
+    'click .js-add-item': function (e, t) {
         var index = 0;
         var item = {};
         item.name = t.$('[name="tmpName"]').val();
@@ -83,14 +86,14 @@ itemTpl.events({
         item.amount = math.round(item.qty * item.price, 2);
 
         // Check items exist
-        if (itemsState.length() > 0) {
+        if (itemsStateList.length() > 0) {
             // Check duplicate
-            var duplicate = itemsState.get(item.name);
+            var duplicate = itemsStateList.get(item.name);
             if (!_.isUndefined(duplicate)) {
                 item.qty = duplicate.qty + item.qty;
                 item.amount = math.round(item.qty * item.price, 2);
 
-                itemsState.update(item.name, {
+                itemsStateList.update(item.name, {
                     qty: item.qty,
                     price: item.price,
                     amount: item.amount
@@ -98,7 +101,7 @@ itemTpl.events({
 
                 return false;
             } else {
-                index = itemsState.last().index + 1;
+                index = itemsStateList.last().index + 1;
             }
         }
 
@@ -107,39 +110,35 @@ itemTpl.events({
         item.indexPrice = 'items.' + index + '.price';
         item.indexAmount = 'items.' + index + '.amount';
 
-        itemsState.insert(item.name, item);
+        itemsStateList.insert(item.name, item);
     },
-    'blur .addItem': function (e, t) {
+    'blur .js-add-item': function (e, t) {
         itemsInputmask();
     },
-    'click .removeItem': function (e, t) {
+    'click .js-remove-item': function (e, t) {
         var self = this;
-        itemsState.remove(self.name);
+        itemsStateList.remove(self.name);
     },
-    'keyup .qty': function (e, t) {
+    'keyup .js-qty': function (e, t) {
         var current = $(e.currentTarget);
-        var name = current.parents('div.row.list').find('.name').val();
-        var getItem = itemsState.get(name);
-
-        console.log(name);
+        var name = current.parents('div.row.list').find('.js-name').val();
+        var getItem = itemsStateList.get(name);
 
         var qty = parseInt(current.val());
         var amount = math.round(qty * getItem.price, 2);
-        itemsState.update(name, {
+        itemsStateList.update(name, {
             qty: qty,
             amount: amount
         });
     },
-    'keyup .price': function (e, t) {
+    'keyup .js-price': function (e, t) {
         var current = $(e.currentTarget);
-        var name = current.parents('div.row.list').find('.name').val();
-        var getItem = itemsState.get(name);
-
-        console.log(name);
+        var name = current.parents('div.row.list').find('.js-name').val();
+        var getItem = itemsStateList.get(name);
 
         var price = parseFloat(current.val());
         var amount = math.round(getItem.qty * price, 2);
-        itemsState.update(name, {
+        itemsStateList.update(name, {
             price: price,
             amount: amount
         });
@@ -154,9 +153,9 @@ var itemsInputmask = function () {
     var tmpPrice = $('[name="tmpPrice"]');
     var tmpAmount = $('[name="tmpAmount"]');
 
-    var qty = $('.qty');
-    var price = $('.price');
-    var amount = $('.amount');
+    var qty = $('.js-qty');
+    var price = $('.js-price');
+    var amount = $('.js-amount');
     var total = $('[name="total"]');
 
     Inputmask.currency([tmpPrice, tmpAmount, price, amount, total]);

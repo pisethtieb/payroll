@@ -1,9 +1,14 @@
+/**
+ * Declare template
+ */
 var indexTpl = Template.sample_location,
     insertTpl = Template.sample_locationInsert,
     updateTpl = Template.sample_locationUpdate,
     showTpl = Template.sample_locationShow;
 
-// Index
+/**
+ * Index
+ */
 indexTpl.onCreated(function () {
     // SEO
     SEO.set({
@@ -12,11 +17,7 @@ indexTpl.onCreated(function () {
     });
 
     // Create new  alertify
-    createNewAlertify("location");
-});
-
-indexTpl.onRendered(function () {
-    //
+    createNewAlertify("location", {transition: 'zoom'});
 });
 
 indexTpl.helpers({
@@ -35,21 +36,20 @@ indexTpl.helpers({
 });
 
 indexTpl.events({
-    'click .insert': function (e, t) {
+    'click .js-insert': function (e, t) {
         alertify.location(fa("plus", "Location"), renderTemplate(insertTpl));
     },
-    'click .update': function (e, t) {
-        var data = Sample.Collection.Location.findOne(this._id);
-        alertify.location(fa("pencil", "Location"), renderTemplate(updateTpl, data));
+    'click .js-update': function (e, t) {
+        alertify.location(fa("pencil", "Location"), renderTemplate(updateTpl, this));
     },
-    'click .remove': function (e, t) {
+    'click .js-remove': function (e, t) {
         var self = this;
 
         alertify.confirm(
             fa("remove", "Location"),
             "Are you sure to delete [" + self._id + "]?",
             function () {
-                Sample.Collection.Location.softRemove(self._id, function (error) {
+                Sample.Collection.Location.remove(self._id, function (error) {
                     if (error) {
                         alertify.error(error.message);
                     } else {
@@ -61,35 +61,46 @@ indexTpl.events({
         );
 
     },
-    'click .show': function (e, t) {
-        var data = Sample.Collection.Location.findOne({_id: this._id});
-        alertify.alert(fa("eye", "Location"), renderTemplate(showTpl, data));
+    'click .js-show': function (e, t) {
+        alertify.location(fa("eye", "Location"), renderTemplate(showTpl, this));
     }
 });
 
-indexTpl.onDestroyed(function () {
-    //
+/**
+ * Insert
+ */
+
+/**
+ * Update
+ */
+updateTpl.onCreated(function () {
+    this.subLocation = this.subscribe('sample_locationById', this.data._id);
 });
 
-// Insert
-insertTpl.onRendered(function () {
-    //
+updateTpl.helpers({
+    data: function () {
+        var data = Sample.Collection.Location.findOne(this._id);
+        return data;
+    }
 });
 
-insertTpl.events({
-    //
+/**
+ * Show
+ */
+showTpl.onCreated(function () {
+    this.subLocation = this.subscribe('sample_locationById', this.data._id);
 });
 
-// Update
-updateTpl.onRendered(function () {
-    //
+showTpl.helpers({
+    data: function () {
+        var data = Sample.Collection.Location.findOne(this._id);
+        return data;
+    }
 });
 
-updateTpl.events({
-    //
-});
-
-// Hook
+/**
+ * Hook
+ */
 AutoForm.hooks({
     sample_locationInsert: {
         before: {

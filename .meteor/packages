@@ -4,37 +4,51 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-######
-# Core
-######
-meteor-platform
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+#autopublish             # Publish all data to the clients (for prototyping)
+#insecure                # Allow all DB writes from clients (for prototyping)
+
+### Core ###
+accounts-base
 accounts-password
-jquery
 underscore
 coffeescript
 markdown
 reactive-var
+reactive-dict
 random
 ejson
+less
+check
 
-######
-# Community
-######
-# Layout
+### Layout ###
+fourseven:scss
 twbs:bootstrap
+#fezvrasta:bootstrap-material-design
 fortawesome:fontawesome
 
-# User
+### User ###
 ian:accounts-ui-bootstrap-3
 ongoworks:security
 alanning:roles
 #mizzao:user-status
 255kb:meteor-status
 
-# Session
+### Session ###
 u2622:persistent-session
 
-# Router
+### Router ###
 meteorhacks:picker
 kadira:flow-router
 kadira:blaze-layout
@@ -42,10 +56,10 @@ cottz:flow-router-auth
 arillo:flow-router-helpers
 zimme:active-route
 tomwasd:flow-router-seo
-tomwasd:flow-router-autoscroll
+#tomwasd:flow-router-autoscroll
 meteorhacks:fast-render
 
-# Collection
+### Collection ###
 matb33:collection-hooks
 dburles:collection-helpers
 aldeed:collection2
@@ -54,27 +68,28 @@ aldeed:simple-schema
 zimme:collection-softremovable
 percolate:migrations
 moonco:fixtures
+dburles:mongo-collection-instances
 
-# Pub-Sub
+### Pub, Sub ###
 meteorhacks:subs-manager
 ccorcos:subs-cache
 reywood:publish-composite
 tmeasday:publish-counts
 meteorhacks:unblock
 
-# Loading
+### Loading ###
 sacha:spin
 
-# Method
+### Method ###
 simple:reactive-method
 okgrow:promise
 msavin:fetcher
 
-# Factory, Faker
+### Factory, Faker ###
 digilord:faker
 anti:fake
 
-# Form
+### Template ###
 aldeed:autoform
 natestrauser:select2
 zimme:select2-bootstrap3-css
@@ -89,50 +104,48 @@ dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
 
-# Date
+### Date ###
 momentjs:moment
 lbee:moment-helpers
 
-# List View
+### List View ###
 aldeed:tabular
-matteodem:easy-search
 
-# Modal & Alert
+### Modal, Alert ###
 mizzao:bootboxjs
 ovcharik:alertifyjs
 czbaker:lightbox2
 juliancwirko:s-alert
+themeteorchef:bert
 
-# File
+### File ###
 cfs:standard-packages
 cfs:gridfs
-yogiben:autoform-file
+#yogiben:autoform-file
 
-# Reactive
+### Reactive ###
 xamfoo:reactive-obj
 manuel:reactivearray
 frozeman:template-var
 
-# Excel
+### Excel ###
 netanelgilad:excel
 netanelgilad:node-uuid
 netanelgilad:mkdirp
 vsivsi:file-collection
 
-# PDF
+### PDF ###
 nilsdannemann:pdfmake
 
-# Npm
+### Npm ###
 meteorhacks:npm
 npm-container
 
-# Viewmodel
+### Viewmodel ###
+peerlibrary:blaze-components
 dalgard:viewmodel
 
-# Backup/Restore
-hitchcott:app-dump
-
-# Others
+### Others ###
 underscorestring:underscore.string
 erasaur:meteor-lodash
 digilord:sugarjs
@@ -142,12 +155,10 @@ numeral:numeral
 bigdsk:inputmask
 natestrauser:animate-css
 rzymek:fullcalendar
-#froatsnook:sleep
 meteorhacks:kadira
+matteodem:easy-search
 
-######
-# Local
-######
+### Local ###
 theara:collection-cache
 theara:id-generator
 theara:relation-exist
@@ -162,3 +173,6 @@ theara:autoprint
 theara:reactive-list
 theara:numeral-helpers
 theara:factory
+theara:app-dump
+theara:autoform-file
+simple:markdown-templating

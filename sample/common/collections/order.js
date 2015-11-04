@@ -53,7 +53,7 @@ Sample.Schema.Order = new SimpleSchema({
         type: Number,
         decimal: true
     },
-    cpanel_branchId: {
+    branchId: {
         type: String,
         label: "Branch"
     }

@@ -1,32 +1,32 @@
 /**
- * Admin
+ * Setting
  */
-Security.defineMethod("sample_ifAdmin", {
+Security.defineMethod("sample_ifSetting", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['admin'], 'Sample');
+        return !Roles.userIsInRole(userId, ['setting'], 'Sample');
     }
 });
 
 /**
- * General
+ * Data Entry
  */
-Security.defineMethod("sample_ifGeneral", {
+Security.defineMethod("sample_ifData", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['general'], 'Sample');
+        return !Roles.userIsInRole(userId, ['data'], 'Sample');
     }
 });
 
 /**
  * Reporter
  */
-Security.defineMethod("sample_ifReporter", {
+Security.defineMethod("sample_ifReport", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['reporter'], 'Sample');
+        return !Roles.userIsInRole(userId, ['report'], 'Sample');
     }
 });

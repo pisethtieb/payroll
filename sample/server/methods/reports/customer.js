@@ -22,7 +22,7 @@ Meteor.methods({
         var selector = {};
 
         if (!_.isEmpty(params.branch)) {
-            selector.cpanel_branchId = params.branch;
+            selector.branchId = params.branch;
         }
         if (!_.isEmpty(params.name)) {
             selector.name = {$regex: params.name, $options: 'i'};

@@ -7,8 +7,17 @@ Module.Sample = {
     version: '0.0.1',
     summary: 'Sample Management System is ...',
     roles: [
-        'admin',
-        'general',
-        'reporter'
-    ]
+        'setting',
+        'data',
+        'report'
+    ],
+    dump: {
+        setting: [
+            'sample_location'
+        ],
+        data: [
+            'sample_customer',
+            'sample_order'
+        ]
+    }
 };

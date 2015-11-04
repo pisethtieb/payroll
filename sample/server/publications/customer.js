@@ -4,7 +4,7 @@
 //    if (this.userId) {
 //        var selector = {};
 //        if (!_.isUndefined(branchId)) {
-//            selector.cpanel_branchId = branchId;
+//            selector.branchId = branchId;
 //        }
 //
 //        return Sample.Collection.Customer.find(selector, {removed: true});

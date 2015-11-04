@@ -124,7 +124,7 @@ AutoForm.hooks({
             insert: function (doc) {
                 var prefix = Session.get('currentBranch') + '-' + doc.customerId;
                 doc._id = idGenerator.genWithPrefix(Sample.Collection.Order, prefix, 3);
-                doc.cpanel_branchId = Session.get('currentBranch');
+                doc.branchId = Session.get('currentBranch');
                 return doc;
             }
         },

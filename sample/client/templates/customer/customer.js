@@ -35,7 +35,11 @@ indexTpl.onRendered(function () {
     //
 });
 
-indexTpl.helpers({});
+indexTpl.helpers({
+    selector: function () {
+        return {branchId: Session.get('currentBranch')};
+    }
+});
 
 indexTpl.events({
     'click .js-insert': function (e, t) {
@@ -180,7 +184,7 @@ AutoForm.hooks({
             insert: function (doc) {
                 var prefix = Session.get('currentBranch') + '-';
                 doc._id = idGenerator.genWithPrefix(Sample.Collection.Customer, prefix, 6);
-                doc.cpanel_branchId = Session.get('currentBranch');
+                doc.branchId = Session.get('currentBranch');
                 return doc;
             }
         },

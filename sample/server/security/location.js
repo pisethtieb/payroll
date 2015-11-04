@@ -1,4 +1,4 @@
 // Location
 Sample.Collection.Location.permit(['insert', 'update', 'remove'])
-    .sample_ifGeneral()
+    .sample_ifSetting()
     .apply();

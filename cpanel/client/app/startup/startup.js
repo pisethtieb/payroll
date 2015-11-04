@@ -1,5 +1,10 @@
+FlowRouter.wait();
 Meteor.startup(function () {
+    console.log('app startup');
+    /*** Material Design ***/
+    //$.material.init();
 
+    /*** Alertify ***/
     alertify.defaults = {
         // dialogs defaults
         modal: true,
@@ -48,4 +53,5 @@ Meteor.startup(function () {
         }
     };
 
+    FlowRouter.initialize();
 });

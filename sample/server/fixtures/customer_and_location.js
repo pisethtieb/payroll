@@ -35,5 +35,5 @@ Factory.define('customer', Sample.Collection.Customer, {
         var location = Factory.create('location');
         return location._id;
     },
-    cpanel_branchId: branchId
+    branchId: branchId
 });

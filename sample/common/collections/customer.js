@@ -42,16 +42,16 @@ Sample.Schema.Customer = new SimpleSchema({
     },
     photo: {
         type: String,
+        optional: true,
         autoform: {
             afFieldInput: {
                 type: 'fileUpload',
                 collection: 'Files',
                 accept: 'image/*'
             }
-        },
-        optional: true
+        }
     },
-    cpanel_branchId: {
+    branchId: {
         type: String,
         label: "Branch"
     }

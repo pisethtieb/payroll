@@ -4,6 +4,9 @@ Meteor Cpanel for Rabbit Training Center.
 ## v.Next
 - add sample events track on report
 
+## v2.1.1, 2015-10-26
+- create `app-dump` to backup and restore
+
 ## v2.1.0, 2015-09-21
 - create new template subscription ready helper `{{...templateSubReady "..."}}`
 

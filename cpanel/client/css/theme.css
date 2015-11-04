@@ -5,7 +5,7 @@ html {
     min-height: 100%;
 }
 
-body {
+.main-body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
 }

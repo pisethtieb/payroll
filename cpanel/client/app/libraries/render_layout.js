@@ -5,6 +5,9 @@ Layout = {
     report: function (regions) {
         render('reportLayout', regions);
     },
+    help: function (regions) {
+        render('helpLayout', regions);
+    },
     render: function (layout, regions) {
         render(layout, regions);
     }

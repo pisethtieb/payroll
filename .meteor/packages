@@ -35,8 +35,8 @@ check
 ### Layout ###
 fourseven:scss
 twbs:bootstrap
-#fezvrasta:bootstrap-material-design
 fortawesome:fontawesome
+fezvrasta:bootstrap-material-design
 
 ### User ###
 ian:accounts-ui-bootstrap-3
@@ -157,6 +157,7 @@ natestrauser:animate-css
 rzymek:fullcalendar
 meteorhacks:kadira
 matteodem:easy-search
+simple:markdown-templating
 
 ### Local ###
 theara:collection-cache
@@ -175,4 +176,3 @@ theara:numeral-helpers
 theara:factory
 theara:app-dump
 theara:autoform-file
-simple:markdown-templating

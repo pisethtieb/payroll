@@ -40,7 +40,7 @@ AutoForm.hooks({
             type = insertDoc.type;
             branch = insertDoc.branch;
 
-            dumpUrl = '/backupRestore?';
+            dumpUrl = '/appDump?';
 
             collections = [];
             if (module != 'all') {
@@ -185,7 +185,7 @@ AutoForm.hooks({
 
             return $.ajax({
                 type: 'POST',
-                url: '/backupRestore',
+                url: '/appDump',
                 data: formData,
                 cache: false,
                 enctype: 'multipart/form-data',

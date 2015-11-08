@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:app-dump',
-    version: '0.9.2',
+    version: '1.0.0',
     // Brief, one-line summary of the package.
     summary: 'Meteor App Dump',
     // URL to the Git repository containing the source code for this package.
@@ -25,7 +25,7 @@ Package.onUse(function (api) {
         'check',
         'mongo',
         'underscore',
-        'iron:router@1.0.7', // for REST endpoint only
+        'meteorhacks:picker@1.0.3',
         'momentjs:moment@2.10.6',
         'matb33:collection-hooks@0.8.1',
         'dburles:mongo-collection-instances@0.3.4'

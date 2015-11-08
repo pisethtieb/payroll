@@ -17,6 +17,7 @@ var render = function (layout, regions) {
     if (typeof regions !== 'object') {
         regions = {content: regions};
     }
+    //regions.materialInit = 'materialInit';
 
     BlazeLayout.render(layout, regions);
 };

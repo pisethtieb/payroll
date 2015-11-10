@@ -97,6 +97,8 @@ updateTpl.onRendered(function () {
 updateTpl.helpers({
     data: function () {
         var data = Sample.Collection.Order.findOne(this._id);
+        data.orderDate = moment(data.orderDate).format('YYYY-MM-DD');
+        
         return data;
     }
 });

@@ -39,6 +39,11 @@ author: bootply.com
 }
 
 #sidebar li.active {
-    border:0 #cfcfcf solid;
+    border:0 #3f51b5 solid;
+    /*border:0 #cfcfcf solid;*/
     border-right-width:5px;
+}
+
+#sidebar a, a:hover, a:focus {
+    color: #3f51b5;
 }

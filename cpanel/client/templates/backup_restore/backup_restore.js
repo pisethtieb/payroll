@@ -7,6 +7,14 @@ var state = new ReactiveObj({
     branch: ''
 });
 
+Template.cpanel_backup.onCreated(function () {
+    // SEO
+    SEO.set({
+        title: 'Backup',
+        description: 'Description for this page'
+    });
+});
+
 Template.cpanel_backup.helpers({
     type: function () {
         let module = state.get('module');
@@ -80,6 +88,13 @@ AutoForm.hooks({
  */
 var restoreWaiting = new ReactiveVar(false);
 
+Template.cpanel_restore.onCreated(function () {
+    // SEO
+    SEO.set({
+        title: 'Restore',
+        description: 'Description for this page'
+    });
+});
 Template.cpanel_restore.helpers({
     restoreWaiting: function () {
         return restoreWaiting.get();

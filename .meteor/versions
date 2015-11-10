@@ -96,7 +96,7 @@ kadira:blaze-layout@2.2.0
 kadira:flow-router@2.8.0
 lai:collection-extensions@0.1.4
 launch-screen@1.0.4
-lbee:moment-helpers@1.2.0
+lbee:moment-helpers@1.2.1
 lepozepo:accounting@1.0.0
 less@2.5.1
 livedata@1.0.15
@@ -113,7 +113,6 @@ meteorhacks:async@1.0.0
 meteorhacks:collection-utils@1.2.0
 meteorhacks:fast-render@2.10.0
 meteorhacks:inject-data@1.4.1
-meteorhacks:kadira@2.26.3
 meteorhacks:meteorx@1.4.1
 meteorhacks:npm@1.5.0
 meteorhacks:picker@1.0.3
@@ -133,6 +132,7 @@ mpowaga:autoform-summernote@0.4.2
 msavin:fetcher@1.1.0
 natestrauser:animate-css@3.4.0
 natestrauser:select2@3.5.1
+netanelgilad:bootstrap-material-datepicker@0.0.1
 netanelgilad:excel@0.2.4
 netanelgilad:mkdirp@0.0.1
 netanelgilad:node-uuid@1.0.2

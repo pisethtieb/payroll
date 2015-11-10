@@ -7,7 +7,7 @@
     <body class="main-body">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -41,8 +41,7 @@
 
                     <!--Breadcrumb-->
                     <!--{{> breadcrumb}}-->
-                    <ol class="breadcrumb pull-right"
-                        style="display: inline; font-size: 12px; font-weight: bold; padding: 10px 0px; margin-bottom: 0px">
+                    <ol class="breadcrumb pull-right" style="display: inline; font-size: 12px; font-weight: bold; padding: 10px 0px; margin-bottom: 0px">
                         {{#each breadcrumb}}
                             {{#if activeClass}}
                                 <li class="{{activeClass}}">{{title}}</li>
@@ -72,9 +71,6 @@
 
     <!-- Status -->
     {{> meteorStatus}}
-
-    <!--Material Init-->
-    {{> materialInit}}
 
     </body>
 </template>

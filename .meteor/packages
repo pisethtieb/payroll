@@ -103,6 +103,7 @@ aldeed:autoform-bs-datetimepicker
 dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
+netanelgilad:bootstrap-material-datepicker
 
 ### Date ###
 momentjs:moment
@@ -155,7 +156,7 @@ numeral:numeral
 bigdsk:inputmask
 natestrauser:animate-css
 rzymek:fullcalendar
-meteorhacks:kadira
+#meteorhacks:kadira
 matteodem:easy-search
 simple:markdown-templating
 

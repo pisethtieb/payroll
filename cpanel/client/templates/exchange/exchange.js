@@ -24,6 +24,7 @@ indexTpl.events({
     },
     'click .update': function (e, t) {
         var data = Cpanel.Collection.Exchange.findOne(this._id);
+        data.exDate = moment(data.exDate).format('YYYY-MM-DD');
         alertify.exchange(fa("pencil", "Exchange"), renderTemplate(updateTpl, data));
     },
     'click .remove': function (e, t) {
@@ -51,7 +52,7 @@ indexTpl.events({
 });
 
 // Insert
-Template.cpanel_exchangeInsert.onRendered(function () {
+insertTpl.onRendered(function () {
     configDate();
 });
 
@@ -101,5 +102,12 @@ AutoForm.hooks({
 // Config on rendered
 var configDate = function () {
     var exDate = $('[name="exDate"]');
-    DateTimePicker.date(exDate);
+    var khr = $('[name="rates.KHR"]');
+    var usd = $('[name="rates.USD"]');
+    var thb = $('[name="rates.THB"]');
+
+    DateTimePicker.date2(exDate);
+    Inputmask.currency(khr, {prefix: 'R '});
+    Inputmask.currency(usd, {prefix: '$ '});
+    Inputmask.currency(thb, {prefix: 'B '});
 };

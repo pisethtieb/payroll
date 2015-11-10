@@ -36,7 +36,7 @@
 <template name="sample_orderInsert">
     {{#autoForm collection=Sample.Collection.Order id="sample_orderInsert" type="insert"}}
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <!--Item Temporary-->
                 {{> sample_orderItem}}
 
@@ -45,7 +45,7 @@
                     <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Order</div>
                     <div class="panel-body">
@@ -64,7 +64,7 @@
     {{#if templateSubReady}}
         {{#autoForm collection=Sample.Collection.Order doc=data id="sample_orderUpdate" type="update"}}
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <!--Item Temporary-->
                     {{> sample_orderItem data.items}}
 
@@ -73,7 +73,7 @@
                         <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">Order</div>
                         <div class="panel-body">

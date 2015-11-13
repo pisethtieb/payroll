@@ -36,7 +36,7 @@ check
 fourseven:scss
 twbs:bootstrap
 fortawesome:fontawesome
-fezvrasta:bootstrap-material-design
+#fezvrasta:bootstrap-material-design
 
 ### User ###
 ian:accounts-ui-bootstrap-3
@@ -103,7 +103,7 @@ aldeed:autoform-bs-datetimepicker
 dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
-netanelgilad:bootstrap-material-datepicker
+#netanelgilad:bootstrap-material-datepicker
 
 ### Date ###
 momentjs:moment
@@ -116,7 +116,6 @@ aldeed:tabular
 mizzao:bootboxjs
 ovcharik:alertifyjs
 czbaker:lightbox2
-juliancwirko:s-alert
 themeteorchef:bert
 
 ### File ###
@@ -177,3 +176,4 @@ theara:numeral-helpers
 theara:factory
 theara:app-dump
 theara:autoform-file
+theara:scrollup

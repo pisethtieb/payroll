@@ -1,6 +1,7 @@
+/*
 //FlowRouter.wait();
 Meteor.startup(function () {
-    /*** Material Init For All Template ***/
+    /!*** Material Init For All Template ***!/
     for (var property in Template) {
         // check if the property is actually a blaze template
         if (Blaze.isTemplate(Template[property])) {
@@ -15,3 +16,4 @@ Meteor.startup(function () {
 
     //FlowRouter.initialize();
 });
+*/

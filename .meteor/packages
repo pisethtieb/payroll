@@ -122,6 +122,8 @@ themeteorchef:bert
 cfs:standard-packages
 cfs:gridfs
 #yogiben:autoform-file
+peerlibrary:fs
+ostrio:meteor-root
 
 ### Reactive ###
 xamfoo:reactive-obj

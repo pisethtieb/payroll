@@ -8,6 +8,9 @@ Layout = {
     help: function (regions) {
         render('helpLayout', regions);
     },
+    generator: function (regions) {
+        render('generatorLayout', regions);
+    },
     render: function (layout, regions) {
         render(layout, regions);
     }

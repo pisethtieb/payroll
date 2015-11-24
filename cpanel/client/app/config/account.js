@@ -6,14 +6,14 @@ Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [
         {
-            fieldName: 'fullName',
+            fieldName: 'name',
             fieldLabel: 'Full name',
             inputType: 'text',
             visible: true,
             validate: function (value, errorFunction) {
-                var fullName = s.trim(value);
+                var name = s.trim(value);
 
-                if (!fullName) {
+                if (!name) {
                     errorFunction("Please write your full name");
                     return false;
                 } else {

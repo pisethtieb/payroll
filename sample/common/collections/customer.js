@@ -15,6 +15,11 @@ Sample.Schema.Customer = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Sample.List.gender();
+            },
+            afFieldInput: {
+                select2Options: {
+                    theme: "bootstrap"
+                }
             }
         }
     },

@@ -9,6 +9,11 @@ Cpanel.Schema.EventReport = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.ListForReport.user();
+            },
+            afFieldInput: {
+                select2Options: {
+                    theme: "bootstrap"
+                }
             }
         }
     },

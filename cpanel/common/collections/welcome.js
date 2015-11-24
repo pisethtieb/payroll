@@ -9,6 +9,11 @@ Cpanel.Schema.WelcomeConfig = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.List.roleForUser();
+            },
+            afFieldInput: {
+                select2Options: {
+                    theme: "bootstrap"
+                }
             }
         }
     },
@@ -19,6 +24,11 @@ Cpanel.Schema.WelcomeConfig = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.List.branchForUser();
+            },
+            afFieldInput: {
+                select2Options: {
+                    theme: "bootstrap"
+                }
             }
         }
     }

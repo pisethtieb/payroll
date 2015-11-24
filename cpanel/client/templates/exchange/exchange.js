@@ -106,7 +106,7 @@ var configDate = function () {
     var usd = $('[name="rates.USD"]');
     var thb = $('[name="rates.THB"]');
 
-    DateTimePicker.date2(exDate);
+    DateTimePicker.date(exDate);
     Inputmask.currency(khr, {prefix: 'R '});
     Inputmask.currency(usd, {prefix: '$ '});
     Inputmask.currency(thb, {prefix: 'B '});

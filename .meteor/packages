@@ -91,8 +91,8 @@ anti:fake
 
 ### Template ###
 aldeed:autoform
-natestrauser:select2
-zimme:select2-bootstrap3-css
+#natestrauser:select2
+#zimme:select2-bootstrap3-css
 aldeed:autoform-select2
 chhib:selectize-bootstrap-3
 comerc:autoform-selectize
@@ -162,6 +162,7 @@ matteodem:easy-search
 simple:markdown-templating
 
 ### Local ###
+theara:select2
 theara:collection-cache
 theara:id-generator
 theara:relation-exist
@@ -179,3 +180,4 @@ theara:factory
 theara:app-dump
 theara:autoform-file
 theara:scrollup
+#theara:bootstrap-material-datetimepicker

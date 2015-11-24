@@ -23,7 +23,7 @@ Cpanel.TabularTable.User = new Tabular.Table({
                 return null;
             }
         },
-        {data: "profile.fullName", title: "Full Name"},
+        {data: "profile.name", title: "Full Name"},
         {
             data: "roles",
             title: "Roles",

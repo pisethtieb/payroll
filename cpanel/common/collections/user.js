@@ -2,7 +2,7 @@
  * User profile
  */
 var UserProfile = new SimpleSchema({
-    fullName: {
+    name: {
         type: String
     }
 });

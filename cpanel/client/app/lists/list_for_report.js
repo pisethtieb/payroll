@@ -17,7 +17,7 @@ Cpanel.ListForReport = {
         list.push({label: "(Select One)", value: ""});
         Meteor.users.find()
             .forEach(function (obj) {
-                list.push({label: obj.username + ' (' + obj.profile.fullName + ')', value: obj._id});
+                list.push({label: obj.username + ' (' + obj.profile.name + ')', value: obj._id});
             });
 
         return list;

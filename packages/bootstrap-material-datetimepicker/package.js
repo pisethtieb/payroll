@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:bootstrap-material-datetimepicker',
-    version: '0.0.4',
+    version: '0.1.5',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.
@@ -17,21 +17,14 @@ Package.onUse(function (api) {
     api.use([
         'jquery',
         'momentjs:moment@2.10.6',
-        'fezvrasta:bootstrap-material-design@0.3.0'
+        'fezvrasta:bootstrap-material-design@0.3.0',
+        'planettraining:material-design-icons-font@2.1.1_2'
     ], 'client');
 
     api.addFiles([
         'lib/css/bootstrap-material-datetimepicker.css',
-        'lib/css/material-icons.css',
+        'lib/css/custom.css',
         'lib/js/bootstrap-material-datetimepicker.js'
-    ], 'client');
-
-    api.addAssets([
-        'lib/font/Material-Design-Icons.eot',
-        'lib/font/Material-Design-Icons.svg',
-        'lib/font/Material-Design-Icons.ttf',
-        'lib/font/Material-Design-Icons.woff',
-        'lib/font/Material-Design-Icons.woff2'
     ], 'client');
 });
 

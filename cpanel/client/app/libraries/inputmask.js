@@ -17,6 +17,7 @@ Inputmask = {
         });
 
         _.forEach(elements, function (element) {
+            //element.inputmask('numeric', options);
             element.inputmask('numeric', options);
         });
     },

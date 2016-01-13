@@ -94,19 +94,25 @@ aldeed:autoform
 #natestrauser:select2
 #zimme:select2-bootstrap3-css
 aldeed:autoform-select2
-chhib:selectize-bootstrap-3
+#jeremy:selectize # For default theme
+chhib:selectize-bootstrap-3 # For bs3 theme
 comerc:autoform-selectize
 rajit:bootstrap3-datepicker
 aldeed:autoform-bs-datepicker
-tsega:bootstrap3-datetimepicker
-aldeed:autoform-bs-datetimepicker
+#tsega:bootstrap3-datetimepicker
+#aldeed:autoform-bs-datetimepicker
+#baysao:autoform-bs-daterangepicker
 dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
 #netanelgilad:bootstrap-material-datepicker
+vazco:universe-autoform-select
+comerc:bs-typeahead
+comerc:autoform-typeahead
 
 ### Date ###
 momentjs:moment
+risul:moment-timezone
 lbee:moment-helpers
 
 ### List View ###
@@ -131,7 +137,6 @@ manuel:reactivearray
 frozeman:template-var
 
 ### Excel ###
-netanelgilad:excel
 netanelgilad:node-uuid
 netanelgilad:mkdirp
 vsivsi:file-collection
@@ -144,17 +149,16 @@ meteorhacks:npm
 npm-container
 
 ### Viewmodel ###
-peerlibrary:blaze-components
-dalgard:viewmodel
+#peerlibrary:blaze-components
+#dalgard:viewmodel
 
 ### Others ###
 underscorestring:underscore.string
 erasaur:meteor-lodash
-digilord:sugarjs
+#digilord:sugarjs
 ecwyne:mathjs
 lepozepo:accounting
 numeral:numeral
-bigdsk:inputmask
 natestrauser:animate-css
 rzymek:fullcalendar
 #meteorhacks:kadira
@@ -180,4 +184,8 @@ theara:factory
 theara:app-dump
 theara:autoform-file
 theara:scrollup
-#theara:bootstrap-material-datetimepicker
+#theara:autoform-bs-md-datetimepicker
+theara:inputmask
+theara:autoform-inputmask
+theara:autoform-bs-datetimepicker
+theara:autoform-bs-daterangepicker

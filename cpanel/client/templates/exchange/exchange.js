@@ -23,9 +23,7 @@ indexTpl.events({
         alertify.exchange(fa("plus", "Exchange"), renderTemplate(insertTpl));
     },
     'click .update': function (e, t) {
-        var data = Cpanel.Collection.Exchange.findOne(this._id);
-        data.exDate = moment(data.exDate).format('YYYY-MM-DD');
-        alertify.exchange(fa("pencil", "Exchange"), renderTemplate(updateTpl, data));
+        alertify.exchange(fa("pencil", "Exchange"), renderTemplate(updateTpl, this));
     },
     'click .remove': function (e, t) {
         var id = this._id;
@@ -53,19 +51,19 @@ indexTpl.events({
 
 // Insert
 insertTpl.onRendered(function () {
-    configDate();
 });
 
 insertTpl.helpers({
     doc: function () {
+        var khr = 0, usd = 0, thb = 0;
         var baseCurrency = Cpanel.Collection.Setting.findOne().baseCurrency;
 
         if (baseCurrency == 'KHR') {
-            var khr = 1;
+            khr = 1;
         } else if (baseCurrency == 'USD') {
-            var usd = 1;
+            usd = 1;
         } else {
-            var thb = 1;
+            thb = 1;
         }
 
         return {base: baseCurrency, khr: khr, usd: usd, thb: thb};
@@ -73,8 +71,18 @@ insertTpl.helpers({
 });
 
 // Update
+updateTpl.onCreated(function () {
+    this.subscribe('cpanel_exchangeById', this.data._id);
+});
+
 updateTpl.onRendered(function () {
-    configDate();
+});
+
+updateTpl.helpers({
+    data: function () {
+        var data = Cpanel.Collection.Exchange.findOne(this._id);
+        return data;
+    }
 });
 
 // Hook
@@ -98,16 +106,3 @@ AutoForm.hooks({
         }
     }
 });
-
-// Config on rendered
-var configDate = function () {
-    var exDate = $('[name="exDate"]');
-    var khr = $('[name="rates.KHR"]');
-    var usd = $('[name="rates.USD"]');
-    var thb = $('[name="rates.THB"]');
-
-    DateTimePicker.date(exDate);
-    Inputmask.currency(khr, {prefix: 'R '});
-    Inputmask.currency(usd, {prefix: '$ '});
-    Inputmask.currency(thb, {prefix: 'B '});
-};

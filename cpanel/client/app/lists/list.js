@@ -78,7 +78,7 @@ Cpanel.List = {
         list.push({label: "(Select One)", value: ""});
 
         if (currentModule == 'Cpanel') {
-            list.push({label: "- All -", value: "all"});
+            list.push({label: "- All -", value: "All"});
             Roles.getGroupsForUser(userId)
                 .forEach(function (group) {
                     var label = Module[group].name;
@@ -95,7 +95,7 @@ Cpanel.List = {
         let list = [];
 
         if (!_.isEmpty(module)) {
-            if (module == 'all' || module == 'Cpanel') {
+            if (module == 'All' || module == 'Cpanel') {
                 list.push({label: '- All -', value: 'all'});
             } else {
                 //list.push({label: '- All -', value: 'all'});

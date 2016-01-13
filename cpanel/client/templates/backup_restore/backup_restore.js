@@ -51,7 +51,7 @@ AutoForm.hooks({
             dumpUrl = '/appDump?';
 
             collections = [];
-            if (module != 'all') {
+            if (module != 'All') {
                 if (type != 'all') {
                     collections = Module[module]['dump'][type];
                 } else { // all
@@ -113,7 +113,7 @@ Template.cpanel_restore.helpers({
         let type = state.get('type');
 
         if (!_.isEmpty(module)) {
-            if (module == 'all') {
+            if (module == 'All') {
                 value = true;
             } else {
                 // Check type

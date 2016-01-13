@@ -10,42 +10,46 @@ author: bootply.com
 */
 
 .help-body {
-    padding-top:0px;
+    padding-top: 0px;
     font-size: 16px;
 }
 
-
 /*.navbar-bright {*/
-    /*background-color:#111155;*/
-    /*color:#fff;*/
+/*background-color:#111155;*/
+/*color:#fff;*/
 /*}*/
 
-.affix-top,.affix{
+.affix-top, .affix {
     position: static;
 }
 
 @media (min-width: 979px) {
     #sidebar.affix-top {
         position: static;
-        margin-top:23px;
-        width:228px;
+        margin-top: 23px;
+        width: 228px;
     }
 
     #sidebar.affix {
         position: fixed;
-        top:70px;
-        width:228px;
+        top: 70px;
+        width: 228px;
     }
 }
 
 #sidebar li.active {
-    /*border:0 #3f51b5 solid;*/
-    border:0 #cfcfcf solid;
-    border-right-width:5px;
+    border: 0 #3f51b5 solid;
+    /*border:0 #cfcfcf solid;*/
+    border-right-width: 5px;
     background-color: #F8F8F8;
 }
 
 #sidebar a, #sidebar a:hover, #sidebar a:focus {
-    /*color: #3f51b5;*/
-    color: #000000;
+    color: #3f51b5;
+    /*color: #000000;*/
+    /*background-color: #F8F8F8;*/
+}
+
+#sidebar a:hover {
+    background-color: #F8F8F8;
 }

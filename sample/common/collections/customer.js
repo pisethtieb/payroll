@@ -26,8 +26,15 @@ Sample.Schema.Customer = new SimpleSchema({
     dob: {
         type: Date,
         label: "Date of Birth",
-        defaultValue: function () {
-            return moment().format('YYYY-MM-DD');
+        defaultValue: moment().toDate(),
+        autoform: {
+            afFieldInput: {
+                type: "bootstrap-datetimepicker",
+                dateTimePickerOptions: {
+                    format: 'DD/MM/YYYY',
+                    //defaultDate: moment().toDate()
+                }
+            }
         }
     },
     telephone: {

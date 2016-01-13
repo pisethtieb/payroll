@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:app-dump',
-    version: '1.0.0',
+    version: '1.0.1',
     // Brief, one-line summary of the package.
     summary: 'Meteor App Dump',
     // URL to the Git repository containing the source code for this package.
@@ -12,8 +12,8 @@ Package.describe({
 
 Npm.depends({
     "busboy": "0.2.11",
-    "mongodb-backup": "1.4.2",
-    "mongodb-restore": "1.4.2"
+    "mongodb-backup": "1.5.1",
+    "mongodb-restore": "1.5.1"
 });
 
 Package.onUse(function (api) {

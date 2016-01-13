@@ -58,13 +58,17 @@ AutoForm.hooks({
     cpanel_welcomeConfig: {
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
             this.event.preventDefault();
-
+            this.done(null, insertDoc);
+        },
+        onSuccess: function (formType, result) {
             // Set current session
-            Session.setAuth('currentModule', insertDoc.module);
-            Session.setAuth('currentBranch', insertDoc.branch);
+            Session.setAuth('currentModule', result.module);
+            Session.setAuth('currentBranch', result.branch);
 
-            FlowRouter.go(s.decapitalize(insertDoc.module) + '.home');
-            this.done();
+            FlowRouter.go(s.decapitalize(result.module) + '.home');
+        },
+        onError: function (formType, error) {
+            alertify.error(error.message);
         }
     }
 });

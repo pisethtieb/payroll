@@ -126,8 +126,9 @@ updateTpl.helpers({
         return state.get('location');
     },
     data: function () {
-        var data = Sample.Collection.Customer.findOne(this._id);
-        data.dob = moment(data.dob).format('YYYY-MM-DD');
+        let data;
+        data = Sample.Collection.Customer.findOne(this._id);
+
         return data;
     }
 });
@@ -151,10 +152,10 @@ showTpl.onCreated(function () {
 
 showTpl.helpers({
     data: function () {
-        var data = Sample.Collection.Customer.findOne(this._id);
+        let data = Sample.Collection.Customer.findOne(this._id);
         data.photoUrl = null;
         if (data.photo) {
-            var photo = Files.findOne(data.photo);
+            let photo = Files.findOne(data.photo);
             data.photoUrl = photo.url();
         }
 
@@ -211,9 +212,6 @@ AutoForm.hooks({
 
 // Config date picker
 var configOnRender = function () {
-    var dob = $('[name="dob"]');
-    DateTimePicker.date(dob);
-
     // Remote select2 (Meteor method)
     //$('[name="locationId"]')
     //    .select2({

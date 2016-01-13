@@ -54,36 +54,36 @@ DateTimePicker = {
         });
     },
     /*** dateRange Package***/
-    dateRange: function (elements, options) {
-        elements = _.isArray(elements) ? elements : [elements];
-        options = _.isObject(options) ? options : {};
-
-        _.defaults(options, {
-            format: 'YYYY-MM-DD',
-            separator: ' To '
-        });
-
-        _.forEach(elements, function (element) {
-            element.daterangepicker(options);
-        });
-    },
-    dateTimeRange: function (elements, options) {
-        elements = _.isArray(elements) ? elements : [elements];
-        options = _.isObject(options) ? options : {};
-
-        _.defaults(options, {
-            timePicker: true,
-            format: 'YYYY-MM-DD HH:mm:ss',
-            separator: ' To ',
-            timePickerIncrement: 5,
-            timePicker12Hour: false,
-            timePickerSeconds: true
-        });
-
-        _.forEach(elements, function (element) {
-            element.daterangepicker(options);
-        });
-    },
+    //dateRange: function (elements, options) {
+    //    elements = _.isArray(elements) ? elements : [elements];
+    //    options = _.isObject(options) ? options : {};
+    //
+    //    _.defaults(options, {
+    //        format: 'YYYY-MM-DD',
+    //        separator: ' To '
+    //    });
+    //
+    //    _.forEach(elements, function (element) {
+    //        element.daterangepicker(options);
+    //    });
+    //},
+    //dateTimeRange: function (elements, options) {
+    //    elements = _.isArray(elements) ? elements : [elements];
+    //    options = _.isObject(options) ? options : {};
+    //
+    //    _.defaults(options, {
+    //        timePicker: true,
+    //        format: 'YYYY-MM-DD HH:mm:ss',
+    //        separator: ' To ',
+    //        timePickerIncrement: 5,
+    //        timePicker12Hour: false,
+    //        timePickerSeconds: true
+    //    });
+    //
+    //    _.forEach(elements, function (element) {
+    //        element.daterangepicker(options);
+    //    });
+    //},
     /*** bootstrapMaterialDatePicker Package ***/
     //mdDate: function (elements, options) {
     //    elements = _.isArray(elements) ? elements : [elements];

@@ -12,8 +12,31 @@ formTpl.onCreated(function () {
 });
 
 formTpl.onRendered(function () {
-    var name = $('[name="date"]');
-    DateTimePicker.dateRange(name);
+});
+
+// Hook
+AutoForm.hooks({
+    cpanel_eventReport: {
+        onSubmit: function (insertDoc, updateDoc, currentDoc) {
+            this.event.preventDefault();
+
+            // You must call this.done()!
+            //this.done(); // submitted successfully, call onSuccess
+            //this.done(new Error('foo')); // failed to submit, call onError with the provided error
+            this.done(null, insertDoc); // submitted successfully, call onSuccess with `result` arg set to "foo"
+            //return false;
+        },
+        onSuccess: function (formType, result) {
+            var params = {};
+            var queryParams = result;
+            var path = FlowRouter.path("cpanel.eventReportGen", params, queryParams);
+
+            window.open(path, '_blank');
+        },
+        onError: function (formType, error) {
+            alertify.error(error.message);
+        }
+    }
 });
 
 // Generate

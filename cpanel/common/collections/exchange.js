@@ -10,17 +10,35 @@ var Rates = new SimpleSchema({
     KHR: {
         type: Number,
         decimal: true,
-        label: "KHR"
+        label: "KHR",
+        autoform: {
+            type: 'inputmask',
+            opts: function () {
+                return inputmaskOpts.currency();
+            }
+        }
     },
     USD: {
         type: Number,
         decimal: true,
-        label: "USD"
+        label: "USD",
+        autoform: {
+            type: 'inputmask',
+            opts: function () {
+                return inputmaskOpts.currency();
+            }
+        }
     },
     THB: {
         type: Number,
         decimal: true,
-        label: "THB"
+        label: "THB",
+        autoform: {
+            type: 'inputmask',
+            opts: function () {
+                return inputmaskOpts.currency();
+            }
+        }
     }
 });
 
@@ -29,9 +47,17 @@ Cpanel.Schema.Exchange = new SimpleSchema({
         type: Date,
         label: "Date",
         unique: true,
-        defaultValue: function () {
-            return moment().format('YYYY-MM-DD');
-        }
+        defaultValue: moment().toDate(),
+        autoform: {
+            afFieldInput: {
+                type: "bootstrap-datetimepicker",
+                dateTimePickerOptions: {
+                    format: 'DD/MM/YYYY',
+                    //defaultDate: moment().toDate()
+                }
+            }
+        },
+        min: moment().toDate()
     },
     base: {
         type: String,

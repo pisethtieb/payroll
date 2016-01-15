@@ -1,5 +1,6 @@
 cpanelRoutes.route('/backup', {
     name: 'cpanel.backup',
+    title: 'Backup',
     action: function (params, queryParams) {
         Layout.main('cpanel_backup');
     },
@@ -13,6 +14,7 @@ cpanelRoutes.route('/backup', {
 
 cpanelRoutes.route('/restore', {
     name: 'cpanel.restore',
+    title: 'Restore',
     action: function (params, queryParams) {
         Layout.main('cpanel_restore');
     },

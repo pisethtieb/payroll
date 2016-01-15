@@ -1,5 +1,6 @@
 cpanelRoutes.route('/eventReport', {
     name: 'cpanel.eventReport',
+    title: 'Event Report',
     action: function (params, queryParams) {
         Layout.main('cpanel_eventReport');
     },
@@ -13,6 +14,7 @@ cpanelRoutes.route('/eventReport', {
 
 cpanelRoutes.route('/eventReportGen', {
     name: 'cpanel.eventReportGen',
+    title: 'Event Report',
     action: function (params, queryParams) {
         Layout.report('cpanel_eventReportGen');
     }

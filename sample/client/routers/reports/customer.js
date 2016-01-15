@@ -3,6 +3,7 @@
  */
 sampleRoutes.route('/customerReport', {
     name: 'sample.customerReport',
+    title: "Customer Report",
     action: function (params, queryParams) {
         Layout.main('sample_customerReport');
     },
@@ -16,6 +17,7 @@ sampleRoutes.route('/customerReport', {
 
 sampleRoutes.route('/customerReportGen', {
     name: 'sample.customerReportGen',
+    title: "Customer Report",
     action: function (params, queryParams) {
         Layout.report('sample_customerReportGen');
     }

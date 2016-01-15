@@ -1,5 +1,6 @@
 cpanelRoutes.route('/exchange', {
     name: 'cpanel.exchange',
+    title: 'Exchange',
     subscriptions: function(params, queryParams) {
         this.register('cpanel_exchange', Meteor.subscribe('cpanel_exchange'));
     },

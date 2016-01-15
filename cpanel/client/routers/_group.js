@@ -1,3 +1,5 @@
 cpanelRoutes = FlowRouter.group({
-    prefix: '/cpanel'
+    prefix: '/cpanel',
+    title: "Cpanel",
+    titlePrefix: 'Cpanel > '
 });

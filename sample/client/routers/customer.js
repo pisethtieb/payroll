@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 sampleRoutes.route('/customer', {
     name: 'sample.customer',
+    title: "Customer",
     subscriptions: function (params, queryParams) {
         // Customer
         //this.register('sample_customer', subs.subscribe('sample_customer', Session.get('currentBranch')));

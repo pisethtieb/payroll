@@ -6,11 +6,6 @@ var indexTpl = Template.cpanel_exchange,
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Exchange',
-        description: 'Description for this page'
-    });
 });
 
 indexTpl.onRendered(function () {

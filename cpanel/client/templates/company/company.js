@@ -4,11 +4,6 @@ var indexTpl = Template.cpanel_company,
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Company',
-        description: 'Description for this page'
-    });
 });
 
 indexTpl.onRendered(function () {

@@ -55,7 +55,7 @@ kadira:blaze-layout
 cottz:flow-router-auth
 arillo:flow-router-helpers
 zimme:active-route
-tomwasd:flow-router-seo
+ostrio:flow-router-title
 #tomwasd:flow-router-autoscroll
 meteorhacks:fast-render
 

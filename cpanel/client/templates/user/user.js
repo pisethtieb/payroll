@@ -6,11 +6,6 @@ var indexTpl = Template.cpanel_user,
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'User',
-        description: 'Description for this page'
-    });
 });
 
 indexTpl.onRendered(function () {

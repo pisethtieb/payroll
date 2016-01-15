@@ -12,12 +12,6 @@ var indexTpl = Template.sample_order,
  * Index
  */
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Order',
-        description: 'Description for this page'
-    });
-
     // Create new  alertify
     createNewAlertify(['order'], {size: 'lg'});
     createNewAlertify(['orderShow', 'customerShow']);

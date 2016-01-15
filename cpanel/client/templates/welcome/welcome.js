@@ -7,11 +7,6 @@ var state = new ReactiveObj();
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Welcome',
-        description: 'Description for this page...'
-    });
 });
 
 indexTpl.helpers({

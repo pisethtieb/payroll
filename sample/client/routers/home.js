@@ -1,5 +1,6 @@
 sampleRoutes.route('/home', {
     name: 'sample.home',
+    title: 'Home',
     action: function (params, queryParams) {
         Layout.main('sample_home');
     },

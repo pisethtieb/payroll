@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 sampleRoutes.route('/order/:customerId', {
     name: 'sample.order',
+    title: 'Order',
     subscriptions: function (params, queryParams) {
         // Order
         //this.register(

@@ -10,12 +10,6 @@ var indexTpl = Template.sample_location,
  * Index
  */
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Location',
-        description: 'Description for this page'
-    });
-
     // Create new  alertify
     createNewAlertify("location", {transition: 'zoom'});
 });

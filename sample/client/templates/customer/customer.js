@@ -19,12 +19,6 @@ var state = new ReactiveObj({
  * Index
  */
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Customer',
-        description: 'Description for this page'
-    });
-
     // Create new  alertify
     createNewAlertify(["customer"], {size: 'lg'});
     createNewAlertify(["customerShow"]);

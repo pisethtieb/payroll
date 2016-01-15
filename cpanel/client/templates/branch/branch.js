@@ -6,11 +6,6 @@ var indexTpl = Template.cpanel_branch,
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Branch',
-        description: 'Description for this page'
-    });
 });
 
 indexTpl.onRendered(function () {

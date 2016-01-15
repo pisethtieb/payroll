@@ -1,5 +1,6 @@
 cpanelRoutes.route('/user', {
     name: 'cpanel.user',
+    title: 'User',
     action: function (params, queryParams) {
         Layout.main('cpanel_user');
     },

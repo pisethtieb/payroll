@@ -4,11 +4,6 @@ var formTpl = Template.cpanel_eventReport,
 
 // Form
 formTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Event Report',
-        description: 'Description for this page'
-    });
 });
 
 formTpl.onRendered(function () {

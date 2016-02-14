@@ -10,7 +10,7 @@ aldeed:collection2-core@1.0.0
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
-aldeed:tabular@1.5.1
+aldeed:tabular@1.6.0
 aldeed:template-extension@3.4.3
 amplify@1.0.0
 anti:fake@0.4.1
@@ -180,7 +180,7 @@ spacebars-compiler@1.0.7
 srp@1.0.4
 standard-minifiers@1.0.2
 stylus@2.511.1
-summernote:standalone@0.7.1
+summernote:standalone@0.7.3
 templating@1.1.5
 templating-tools@1.0.0
 theara:app-dump@1.0.1
@@ -193,9 +193,9 @@ theara:call-async@0.1.9
 theara:collection-cache@0.8.5
 theara:events@0.1.7
 theara:fa-helpers@0.0.4
-theara:factory@0.1.0
+theara:factory@0.1.5
 theara:flow-router-breadcrumb@0.2.8
-theara:id-generator@0.0.7
+theara:id-generator@0.1.8
 theara:inputmask@0.0.1
 theara:lightbox-helpers@0.0.7
 theara:moneyjs@0.0.3
@@ -212,7 +212,7 @@ twbs:bootstrap@3.3.6
 u2622:persistent-session@0.4.4
 ui@1.0.8
 underscore@1.0.4
-underscorestring:underscore.string@3.2.2
+underscorestring:underscore.string@3.2.3
 url@1.0.5
 vazco:universe-autoform-select@0.1.20
 vsivsi:file-collection@1.2.2

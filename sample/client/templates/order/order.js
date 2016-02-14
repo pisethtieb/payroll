@@ -118,8 +118,6 @@ AutoForm.hooks({
     sample_orderInsert: {
         before: {
             insert: function (doc) {
-                var prefix = Session.get('currentBranch') + '-' + doc.customerId;
-                doc._id = idGenerator.genWithPrefix(Sample.Collection.Order, prefix, 3);
                 doc.branchId = Session.get('currentBranch');
                 return doc;
             }

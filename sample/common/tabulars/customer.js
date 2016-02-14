@@ -4,9 +4,9 @@ Sample.TabularTable.Customer = new Tabular.Table({
     collection: Sample.Collection.Customer,
     pagingType: "full_numbers",
     autoWidth: false,
-    columnDefs: [
-        {"width": "12px", "targets": 0}
-    ],
+    columnDefs: [{
+        "width": "12px", "targets": 0
+    }],
     order: [['1', 'desc']],
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.sample_customerAction},

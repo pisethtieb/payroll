@@ -13,7 +13,7 @@ Cpanel.TabularTable.Exchange = new Tabular.Table({
             data: "exDate",
             title: "Date",
             render: function (val, type, doc) {
-                return moment(val).format('YYYY-MM-DD');
+                return moment(val).format('DD-MM-YYYY');
             }
         },
         {data: "base", title: "Base Currency"},

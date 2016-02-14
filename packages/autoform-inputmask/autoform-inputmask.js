@@ -11,7 +11,7 @@ AutoForm.addInputType("inputmask", {
 Template.afInputmask.onRendered(function () {
     var $input = this.$('input');
     var data = this.data;
-    var opts = data.atts.opts || {};
+    var opts = data.att.inputmaskOptions || {};
 
     // Check opts
     if (typeof opts == 'function') {
@@ -26,7 +26,7 @@ Template.afInputmask.helpers({
         var atts = _.clone(this.atts);
         // Add bootstrap class
         atts = AutoForm.Utility.addClass(atts, "form-control");
-        delete atts.opts;
+        delete att.inputmaskOptions;
 
         return atts;
     }

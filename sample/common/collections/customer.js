@@ -5,8 +5,7 @@ Sample.Collection.Customer = new Mongo.Collection("sample_customer");
 Sample.Schema.Customer = new SimpleSchema({
     name: {
         type: String,
-        label: "Name",
-        max: 200
+        label: "Name"
     },
     gender: {
         type: String,

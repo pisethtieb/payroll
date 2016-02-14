@@ -56,8 +56,7 @@ Cpanel.Schema.Exchange = new SimpleSchema({
                     //defaultDate: moment().toDate()
                 }
             }
-        },
-        min: moment().toDate()
+        }
     },
     base: {
         type: String,

@@ -5,8 +5,14 @@ Sample.Collection.Order = new Mongo.Collection("sample_order");
 Sample.Schema.Order = new SimpleSchema({
     orderDate: {
         type: Date,
-        defaultValue: function () {
-            return moment().format('YYYY-MM-DD');
+        defaultValue: moment().toDate(),
+        autoform: {
+            afFieldInput: {
+                type: "bootstrap-datetimepicker",
+                dateTimePickerOptions: {
+                    format: 'DD/MM/YYYY'
+                }
+            }
         }
     },
     customerId: {
@@ -63,4 +69,4 @@ Sample.Schema.Order = new SimpleSchema({
 Sample.Collection.Order.attachSchema(Sample.Schema.Order);
 
 // Attach soft remove
-Sample.Collection.Order.attachBehaviour('softRemovable');
+//Sample.Collection.Order.attachBehaviour('softRemovable');

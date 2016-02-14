@@ -40,7 +40,7 @@ indexTpl.events({
     },
     'click .show': function (e, t) {
         this.ratesVal = JSON.stringify(this.rates);
-        alertify.alert(fa("eye", "Exchange"), renderTemplate(showTpl, this).html);
+        alertify.exchange(fa("eye", "Exchange"), renderTemplate(showTpl, this));
     }
 });
 

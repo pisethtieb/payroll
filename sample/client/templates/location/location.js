@@ -56,7 +56,7 @@ indexTpl.events({
 
     },
     'click .js-show': function (e, t) {
-        alertify.location(fa("eye", "Location"), renderTemplate(showTpl, this));
+        alertify.alert(fa("eye", "Location"), renderTemplate(showTpl, this).html);
     }
 });
 
@@ -99,7 +99,6 @@ AutoForm.hooks({
     sample_locationInsert: {
         before: {
             insert: function (doc) {
-                doc._id = idGenerator.gen(Sample.Collection.Location, 4);
                 return doc;
             }
         },

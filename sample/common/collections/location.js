@@ -13,4 +13,4 @@ Sample.Schema.Location = new SimpleSchema({
 Sample.Collection.Location.attachSchema(Sample.Schema.Location);
 
 // Attach soft remove
-Sample.Collection.Location.attachBehaviour('softRemovable');
+//Sample.Collection.Location.attachBehaviour('softRemovable');

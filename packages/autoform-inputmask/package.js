@@ -1,8 +1,8 @@
 Package.describe({
     name: 'theara:autoform-inputmask',
-    version: '0.3.3',
+    version: '0.4.7',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'Inputmask for AutoForm',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.
@@ -17,18 +17,22 @@ Package.onUse(function (api) {
     api.use([
         'underscore',
         'templating',
+        'tracker',
         'aldeed:autoform@5.7.1'
-    ], 'client');
-
-    api.export([
-        'inputmaskOpts'
     ], 'client');
 
     api.addFiles([
         'autoform-inputmask.html',
-        'autoform-inputmask.js',
-        'inputmask-opts.js'
+        'autoform-inputmask.js'
     ], 'client');
+
+    api.addFiles([
+        'inputmask-opts.js'
+    ]);
+
+    api.export([
+        'inputmaskOptions'
+    ]);
 });
 
 Package.onTest(function (api) {

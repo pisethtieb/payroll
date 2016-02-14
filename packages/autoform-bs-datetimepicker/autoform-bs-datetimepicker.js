@@ -90,11 +90,12 @@ Template.afBootstrapDateTimePicker.onRendered(function () {
     // which is "" by default, must be null instead. Otherwise we get
     // the current datetime when we call getDate() on an empty field.
     if (!opts.defaultDate || opts.defaultDate === "") {
-        opts.defaultDate = null;
+        opts.defaultDate = data.value;
     }
 
     // instanciate datetimepicker
     $input.datetimepicker(opts);
+
 
     // set and reactively update values
     this.autorun(function () {
@@ -115,6 +116,7 @@ Template.afBootstrapDateTimePicker.onRendered(function () {
             dtp.maxDate(currentData.max);
         }
     });
+
 
 });
 

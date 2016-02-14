@@ -65,7 +65,7 @@ dburles:collection-helpers
 aldeed:collection2
 meteorhacks:aggregate
 aldeed:simple-schema
-zimme:collection-softremovable
+#zimme:collection-softremovable
 percolate:migrations
 moonco:fixtures
 dburles:mongo-collection-instances
@@ -95,8 +95,10 @@ aldeed:autoform
 #zimme:select2-bootstrap3-css
 aldeed:autoform-select2
 #jeremy:selectize # For default theme
-chhib:selectize-bootstrap-3 # For bs3 theme
-comerc:autoform-selectize
+#chhib:selectize-bootstrap-3 # For bs3 theme
+#comerc:autoform-selectize
+#tuul:autoform-selectize
+vazco:universe-autoform-select
 rajit:bootstrap3-datepicker
 aldeed:autoform-bs-datepicker
 #tsega:bootstrap3-datetimepicker
@@ -106,9 +108,10 @@ dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
 #netanelgilad:bootstrap-material-datepicker
-vazco:universe-autoform-select
 comerc:bs-typeahead
 comerc:autoform-typeahead
+trsdln:flyouts
+forwarder:autoform-wizard
 
 ### Date ###
 momentjs:moment
@@ -117,6 +120,7 @@ lbee:moment-helpers
 
 ### List View ###
 aldeed:tabular
+miro:json2html
 
 ### Modal, Alert ###
 mizzao:bootboxjs
@@ -127,7 +131,7 @@ themeteorchef:bert
 ### File ###
 cfs:standard-packages
 cfs:gridfs
-#yogiben:autoform-file
+yogiben:autoform-file
 peerlibrary:fs
 ostrio:meteor-root
 
@@ -182,7 +186,7 @@ theara:reactive-list
 theara:numeral-helpers
 theara:factory
 theara:app-dump
-theara:autoform-file
+#theara:autoform-file
 theara:scrollup
 #theara:autoform-bs-md-datetimepicker
 theara:inputmask

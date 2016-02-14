@@ -1,4 +1,4 @@
-inputmaskOpts = {
+inputmaskOptions = {
     currency: function (options) {
         options = _.isObject(options) ? options : {};
 

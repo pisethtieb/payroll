@@ -24,7 +24,7 @@
               "version": "0.5.0"
             },
             "concat-stream": {
-              "version": "1.5.0",
+              "version": "1.5.1",
               "dependencies": {
                 "inherits": {
                   "version": "2.0.1"
@@ -33,22 +33,22 @@
                   "version": "0.0.6"
                 },
                 "readable-stream": {
-                  "version": "2.0.2",
+                  "version": "2.0.5",
                   "dependencies": {
                     "core-util-is": {
-                      "version": "1.0.1"
+                      "version": "1.0.2"
                     },
                     "isarray": {
                       "version": "0.0.1"
                     },
                     "process-nextick-args": {
-                      "version": "1.0.2"
+                      "version": "1.0.6"
                     },
                     "string_decoder": {
                       "version": "0.10.31"
                     },
                     "util-deprecate": {
-                      "version": "1.0.1"
+                      "version": "1.0.2"
                     }
                   }
                 }
@@ -63,18 +63,18 @@
           "version": "2.4.0",
           "dependencies": {
             "pako": {
-              "version": "0.2.7"
+              "version": "0.2.8"
             }
           }
         },
         "crc-32": {
-          "version": "0.3.0"
+          "version": "0.4.0"
         },
         "adler-32": {
-          "version": "0.2.1"
+          "version": "0.3.0"
         },
         "commander": {
-          "version": "2.8.1",
+          "version": "2.9.0",
           "dependencies": {
             "graceful-readlink": {
               "version": "1.0.1"

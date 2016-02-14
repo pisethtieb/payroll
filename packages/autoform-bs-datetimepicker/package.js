@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:autoform-bs-datetimepicker',
-    version: '0.3.8',
+    version: '0.5.2',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.
@@ -26,6 +26,7 @@ Package.onUse(function (api) {
         'jquery',
         'underscore',
         'templating',
+        'tracker',
         'momentjs:moment@2.11.0',
         'aldeed:autoform@5.8.1'
     ], 'client');

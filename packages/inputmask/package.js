@@ -1,8 +1,8 @@
 Package.describe({
     name: 'theara:inputmask',
-    version: '0.0.1',
+    version: '3.2.6_7',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'Inputmask JS',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.

@@ -10,15 +10,18 @@ AutoForm.addInputType("inputmask", {
 
 Template.afInputmask.onRendered(function () {
     var $input = this.$('input');
-    var data = this.data;
-    var opts = data.att.inputmaskOptions || {};
 
-    // Check opts
-    if (typeof opts == 'function') {
-        opts = opts();
-    }
+    this.autorun(function () {
+        var data = Template.currentData();
+        var opts = data.atts.inputmaskOptions || {};
 
-    $input.inputmask(opts);
+        // Check opts
+        if (typeof opts == 'function') {
+            opts = opts();
+        }
+
+        $input.inputmask(opts);
+    });
 });
 
 Template.afInputmask.helpers({
@@ -26,7 +29,7 @@ Template.afInputmask.helpers({
         var atts = _.clone(this.atts);
         // Add bootstrap class
         atts = AutoForm.Utility.addClass(atts, "form-control");
-        delete att.inputmaskOptions;
+        delete atts.inputmaskOptions;
 
         return atts;
     }

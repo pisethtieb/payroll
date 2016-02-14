@@ -25,26 +25,26 @@ Accounts.ui.config({
     ]
 });
 
-// Events user login/out
-Accounts.onLogin(function () {
-    // Set current user id
-    Session.setPersistent('currentUserId', Meteor.userId());
-
-    Events.track({
-        type: 'Login'
-    });
-});
+// Events user login
+// Accounts.onLogin(function () {
+//     // Set current user id
+//     Session.setPersistent('currentUserId', Meteor.userId());
+//
+//     Events.track({
+//         type: 'Login'
+//     });
+// });
 
 accountsUIBootstrap3.logoutCallback = function (error) {
     if (!error) {
         FlowRouter.go('cpanel.welcome');
 
-        Events.track({
-            type: 'Logout',
-            userId: Session.get('currentUserId')
-        });
-
-        // Clear persistent session of user id
-        Session.clearPersistent();
+        // Events user logout
+        // Events.track({
+        //     type: 'Logout',
+        //     userId: Session.get('currentUserId')
+        // });
+        // // Clear persistent session of user id
+        // Session.clearPersistent();
     }
 };

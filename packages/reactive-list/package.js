@@ -16,7 +16,7 @@ Package.onUse(function (api) {
 
     api.use([
         'deps',
-        'erasaur:meteor-lodash@3.10.1'
+        'underscore'
     ]);
 
     api.export('ReactiveList');

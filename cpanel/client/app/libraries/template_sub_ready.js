@@ -1,7 +1,7 @@
 /**
  * Template sub ready
  */
-templateSubReady = function () {
+templateSubsReady = function () {
     var subs, ready;
     var slice = [].slice;
     var tmpl = Template.instance();
@@ -19,4 +19,4 @@ templateSubReady = function () {
     return ready;
 };
 
-Template.registerHelper('templateSubReady', templateSubReady);
+Template.registerHelper('templateSubsReady', templateSubsReady);

@@ -46,14 +46,10 @@ genTpl.helpers({
         // Get query params
         //FlowRouter.watchPathChange();
         var q = FlowRouter.current().queryParams;
+        // Use Fetcher
+        Fetcher.setDefault("data", false);
+        Fetcher.retrieve('data', 'capnel_eventReport', q);
 
-        var callId = JSON.stringify(q);
-        var call = Meteor.callAsync(callId, 'capnel_eventReport', q);
-
-        if (!call.ready()) {
-            return false;
-        }
-
-        return call.result();
+        return Fetcher.get('data');
     }
 });

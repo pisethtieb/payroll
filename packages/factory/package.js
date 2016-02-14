@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:factory',
-    version: '0.1.5',
+    version: '0.1.1',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.
@@ -11,11 +11,11 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-    api.versionsFrom('1.2.1');
+    api.versionsFrom('1.2.0.2');
     api.use('ecmascript');
 
     api.use([
-        'erasaur:meteor-lodash@3.10.1'
+        'underscore'
     ]);
 
     api.export('Factory');

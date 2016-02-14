@@ -7,7 +7,7 @@ idGenerator = {
 
         var obj = collection.findOne({}, {sort: sortBy});
 
-        if (obj) {
+        if (obj != null) {
             var tmpId = parseInt(obj[field]) + 1;
             // Check length
             if (tmpId.toString().length > length) {
@@ -22,7 +22,6 @@ idGenerator = {
     genWithPrefix: function (collection, prefix, length, field) {
         var field = _.isUndefined(field) ? '_id' : field;
         var newId = prefix + s.lpad(1, length, '0');
-
         var reg = {};
         reg[field] = new RegExp("^" + prefix, "m");
         var sortBy = {};
@@ -30,7 +29,7 @@ idGenerator = {
 
         var obj = collection.findOne(reg, {sort: sortBy});
 
-        if (obj) {
+        if (obj != null) {
             var currentId = s(obj[field]).slice(-length).value();
             var tmpId = parseInt(currentId) + 1;
 

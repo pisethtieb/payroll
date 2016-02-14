@@ -3,6 +3,8 @@
 ### Install
 
 ```js
+meteor add numeral:numeral
+
 meteor add theara:numeral-helpers
 ```
 ### Usage
@@ -13,5 +15,7 @@ meteor add theara:numeral-helpers
 ```
 
 ### Changelog
+- v 0.0.4 (2016-02-02)
+    - update readme
 - v 0.0.1 (2015-08-31)
     - init

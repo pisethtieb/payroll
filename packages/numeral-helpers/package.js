@@ -1,8 +1,8 @@
 Package.describe({
     name: 'theara:numeral-helpers',
-    version: '0.0.3',
+    version: '0.0.4',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'Helper for Numeral JS',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.

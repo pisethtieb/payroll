@@ -13,8 +13,8 @@ var Rates = new SimpleSchema({
         label: "KHR",
         autoform: {
             type: 'inputmask',
-            opts: function () {
-                return inputmaskOpts.currency();
+            inputmaskOptions: function () {
+                return inputmaskOptions.currency();
             }
         }
     },
@@ -24,8 +24,8 @@ var Rates = new SimpleSchema({
         label: "USD",
         autoform: {
             type: 'inputmask',
-            opts: function () {
-                return inputmaskOpts.currency();
+            inputmaskOptions: function () {
+                return inputmaskOptions.currency();
             }
         }
     },
@@ -35,8 +35,8 @@ var Rates = new SimpleSchema({
         label: "THB",
         autoform: {
             type: 'inputmask',
-            opts: function () {
-                return inputmaskOpts.currency();
+            inputmaskOptions: function () {
+                return inputmaskOptions.currency();
             }
         }
     }
@@ -53,7 +53,7 @@ Cpanel.Schema.Exchange = new SimpleSchema({
                 type: "bootstrap-datetimepicker",
                 dateTimePickerOptions: {
                     format: 'DD/MM/YYYY',
-                    //defaultDate: moment().toDate()
+                    pickTime: false
                 }
             }
         }

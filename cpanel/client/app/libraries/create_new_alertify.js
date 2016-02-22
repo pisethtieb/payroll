@@ -38,7 +38,7 @@ createNewAlertify = function (names, options) {
                     },
                     prepare: function () {
                         this.setContent(this.message);
-                        this.elements.footer.style.visibility = "hidden";
+                        this.elements.footer.style.display = "none";
                     },
                     hooks: {
                         onshow: function () {

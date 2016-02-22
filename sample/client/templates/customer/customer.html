@@ -48,11 +48,10 @@
                 </div>
 
                 {{> afQuickField name="photo"}}
-
-                <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
-                <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
             </div>
         </div>
+
+        {{> alertifyFormFooterWithButton}}
     {{/autoForm}}
 </template>
 
@@ -91,11 +90,10 @@
                     </div>
 
                     {{> afQuickField name="photo"}}
-
-                    <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
-                    <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
                 </div>
             </div>
+
+            {{> alertifyFormFooterWithButton}}
         {{/autoForm}}
     {{else}}
         {{> loading}}

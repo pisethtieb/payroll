@@ -1,0 +1,55 @@
+<!--Default-->
+<template name="formFooter">
+    <div style="
+        background-color: #fff;
+        padding: 19px 0px 3px;
+        border-top: 1px solid #e5e5e5;
+        border-radius: 0 0 6px 6px;
+
+        margin-left: 0px;
+        margin-right: 0px;
+        min-height: 43px;
+
+        text-align: right;
+    ">
+        {{> Template.contentBlock}}
+    </div>
+</template>
+
+<template name="formFooterWithButton">
+    <div style="
+        background-color: #fff;
+        padding: 19px 0px 3px;
+        border-top: 1px solid #e5e5e5;
+        border-radius: 0 0 6px 6px;
+
+        margin-left: 0px;
+        margin-right: 0px;
+        min-height: 43px;
+
+        text-align: right;
+    ">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+        <button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</button>
+    </div>
+</template>
+
+<!--Alertify-->
+<template name="alertifyFormFooter">
+    <div class="ajs-footer" style="padding: 19px 0px 3px; margin-left: 0px; margin-right: 0px;">
+        <div class="ajs-auxiliary ajs-buttons"></div>
+        <div class="ajs-primary ajs-buttons">
+            {{> Template.contentBlock}}
+        </div>
+    </div>
+</template>
+
+<template name="alertifyFormFooterWithButton">
+    <div class="ajs-footer" style="padding: 19px 0px 3px; margin-left: 0px; margin-right: 0px;">
+        <div class="ajs-auxiliary ajs-buttons"></div>
+        <div class="ajs-primary ajs-buttons">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+            <button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</button>
+        </div>
+    </div>
+</template>

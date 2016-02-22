@@ -7,6 +7,7 @@ Meteor.startup(function () {
         basic: false,
         frameless: false,
         movable: true,
+        moveBounded:false,
         resizable: true,
         closable: true,
         closableByDimmer: true,
@@ -39,13 +40,21 @@ Meteor.startup(function () {
         },
 
         // theme settings
+        // theme: {
+        //     // class name attached to prompt dialog input textbox.
+        //     input: 'ajs-input',
+        //     // class name attached to ok button
+        //     ok: 'ajs-ok',
+        //     // class name attached to cancel button
+        //     cancel: 'ajs-cancel'
+        // }
         theme: {
             // class name attached to prompt dialog input textbox.
-            input: 'ajs-input',
+            input: 'form-control',
             // class name attached to ok button
-            ok: 'ajs-ok',
+            ok: 'btn btn-primary',
             // class name attached to cancel button
-            cancel: 'ajs-cancel'
+            cancel: 'btn btn-danger'
         }
     };
 

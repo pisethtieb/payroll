@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:autoform-bs-datetimepicker',
-    version: '0.5.2',
+    version: '0.6.0',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.
@@ -40,6 +40,7 @@ Package.onUse(function (api) {
         'lib/bootstrap-datetimepicker.min.js',
         'autoform-bs-datetimepicker.html',
         'autoform-bs-datetimepicker.js',
+        'lib/bootstrap-collapse-transitions.js'
         //'bs-datetimepicker-opts.js'
     ], 'client');
 });

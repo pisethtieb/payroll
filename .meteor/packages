@@ -101,8 +101,8 @@ aldeed:autoform-select2
 vazco:universe-autoform-select
 rajit:bootstrap3-datepicker
 aldeed:autoform-bs-datepicker
-#tsega:bootstrap3-datetimepicker
-#aldeed:autoform-bs-datetimepicker
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+aldeed:autoform-bs-datetimepicker
 #baysao:autoform-bs-daterangepicker
 dburles:spacebars-tohtml
 raix:handlebar-helpers
@@ -124,7 +124,7 @@ miro:json2html
 
 ### Modal, Alert ###
 mizzao:bootboxjs
-ovcharik:alertifyjs
+theara:alertifyjs
 czbaker:lightbox2
 themeteorchef:bert
 
@@ -191,5 +191,5 @@ theara:scrollup
 #theara:autoform-bs-md-datetimepicker
 theara:inputmask
 theara:autoform-inputmask
-theara:autoform-bs-datetimepicker
+#theara:autoform-bs-datetimepicker
 theara:autoform-bs-daterangepicker

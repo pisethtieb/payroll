@@ -31,7 +31,8 @@ Sample.Schema.Customer = new SimpleSchema({
                 type: "bootstrap-datetimepicker",
                 dateTimePickerOptions: {
                     format: 'DD/MM/YYYY',
-                    //defaultDate: moment().toDate()
+                    pickTime: false,
+                    showToday: true
                 }
             }
         }

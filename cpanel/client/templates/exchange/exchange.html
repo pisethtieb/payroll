@@ -49,8 +49,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
-        <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+        {{> alertifyFormFooterWithButton}}
     {{/autoForm}}
 </template>
 
@@ -80,8 +79,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
-            <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+            {{> alertifyFormFooterWithButton}}
         {{/autoForm}}
     {{else}}
         {{> loading}}

@@ -10,7 +10,8 @@ Sample.Schema.Order = new SimpleSchema({
             afFieldInput: {
                 type: "bootstrap-datetimepicker",
                 dateTimePickerOptions: {
-                    format: 'DD/MM/YYYY'
+                    format: 'DD/MM/YYYY',
+                    pickTime: false
                 }
             }
         }

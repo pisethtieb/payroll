@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:select2',
-    version: '4.0.1_5',
+    version: '4.0.2_2',
     // Brief, one-line summary of the package.
     summary: '',
     // URL to the Git repository containing the source code for this package.
@@ -18,22 +18,9 @@ Package.onUse(function (api) {
 
     api.addFiles([
         'lib/select2-4/css/select2.css',
-        'lib/select2-bootstrap-theme.css',
-        //'lib/select2-bootstrap.css',
+        'lib/select2-bootstrap.css',
         'lib/select2-4/js/select2.js'
     ], "client");
-
-    //api.addFiles([
-    //    'lib/select2/select2.css',
-    //    'lib/select2-bootstrap.css',
-    //    'lib/select2/select2.js'
-    //], "client");
-
-    //api.addAssets([
-    //    "lib/select2/select2.png",
-    //    "lib/select2/select2x2.png",
-    //    "lib/select2/select2-spinner.gif"
-    //], "client")
 });
 
 Package.onTest(function (api) {

@@ -1,4 +1,4 @@
-Picker.route('/sample/locationRemote/:locationId', function (params, req, res, next) {
+Picker.route('/payroll/locationRemote/:locationId', function (params, req, res, next) {
     var selector = [
         {_id: {$regex: params.locationId, $options: 'i'}},
         {name: {$regex: params.locationId, $options: 'i'}}

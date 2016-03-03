@@ -1,5 +1,5 @@
 Meteor.methods({
-    sample_customerReport: function (params) {
+    payroll_customerReport: function (params) {
         var data = {
             title: {},
             header: {},
@@ -29,7 +29,7 @@ Meteor.methods({
         }
 
         var index = 1;
-        Sample.Collection.Customer.find(selector)
+        Payroll.Collection.Customer.find(selector)
             .forEach(function (obj) {
                 // Do something
                 obj.index = index;

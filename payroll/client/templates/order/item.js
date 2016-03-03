@@ -1,7 +1,7 @@
 /**
  * Declare template
  */
-var itemTpl = Template.sample_orderItem;
+var itemTpl = Template.payroll_orderItem;
 
 /**
  * Define state

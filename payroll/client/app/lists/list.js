@@ -1,7 +1,7 @@
 // List
-Sample.ListState = new ReactiveObj();
+Payroll.ListState = new ReactiveObj();
 
-Sample.List = {
+Payroll.List = {
     gender: function () {
         var list = [];
         list.push({label: "(Select One)", value: ""});
@@ -15,8 +15,8 @@ Sample.List = {
         list.push({label: "(Select One)", value: ""});
 
         // Set default for update
-        var id = Sample.ListState.get(['customer', 'addressId']);
-        Sample.Collection.Address.find(id)
+        var id = Payroll.ListState.get(['customer', 'addressId']);
+        Payroll.Collection.Address.find(id)
             .forEach(function (obj) {
                 list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
             });
@@ -27,11 +27,18 @@ Sample.List = {
         var list = [];
         list.push({label: "(Select One)", value: ""});
 
-        Sample.Collection.Customer.find()
+        Payroll.Collection.Customer.find()
             .forEach(function (obj) {
                 list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
             });
 
+        return list;
+    },
+    overtimeStatus: function () {
+        var list = [];
+        list.push({label: "(Select One)", value: ""});
+        list.push({label: 'Yes', value: 'Yes'});
+        list.push({label: 'No', value: 'No'});
         return list;
     }
 };

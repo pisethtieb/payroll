@@ -1,6 +1,6 @@
 //// Easy search
-//EasySearch.createSearchIndex('sample_customerSearch', {
-//    collection: Sample.Collection.Customer, // instanceof Meteor.Collection
+//EasySearch.createSearchIndex('payroll_customerSearch', {
+//    collection: Payroll.Collection.Customer, // instanceof Meteor.Collection
 //    field: ['_id', 'name', 'telephone'], // array of fields to be searchable
 //    //transform: function (doc) { // Support elastic-search only
 //    //    doc.dobVal = moment(doc.dob).format('DD-MM-YYYY');

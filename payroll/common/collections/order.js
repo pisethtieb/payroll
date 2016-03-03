@@ -1,8 +1,8 @@
 // Collection
-Sample.Collection.Order = new Mongo.Collection("sample_order");
+Payroll.Collection.Order = new Mongo.Collection("payroll_order");
 
 // Schema
-Sample.Schema.Order = new SimpleSchema({
+Payroll.Schema.Order = new SimpleSchema({
     orderDate: {
         type: Date,
         defaultValue: moment().toDate(),
@@ -67,7 +67,7 @@ Sample.Schema.Order = new SimpleSchema({
 });
 
 // Attach schema
-Sample.Collection.Order.attachSchema(Sample.Schema.Order);
+Payroll.Collection.Order.attachSchema(Payroll.Schema.Order);
 
 // Attach soft remove
-//Sample.Collection.Order.attachBehaviour('softRemovable');
+//Payroll.Collection.Order.attachBehaviour('softRemovable');

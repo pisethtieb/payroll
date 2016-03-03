@@ -1,12 +1,12 @@
 /**
  * Declare template
  */
-var indexTpl = Template.sample_customer,
-    insertTpl = Template.sample_customerInsert,
-    updateTpl = Template.sample_customerUpdate,
-    showTpl = Template.sample_customerShow,
+var indexTpl = Template.payroll_customer,
+    insertTpl = Template.payroll_customerInsert,
+    updateTpl = Template.payroll_customerUpdate,
+    showTpl = Template.payroll_customerShow,
 
-    locationAddOnTpl = Template.sample_locationAddOnCustomer;
+    locationAddOnTpl = Template.payroll_locationAddOnCustomer;
 
 /**
  * State
@@ -49,7 +49,7 @@ indexTpl.events({
             fa("remove", "Customer"),
             "Are you sure to delete [" + self._id + "]?",
             function () {
-                Sample.Collection.Customer.remove(self._id, function (error) {
+                Payroll.Collection.Customer.remove(self._id, function (error) {
                     if (error) {
                         alertify.error(error.message);
                     } else {
@@ -70,7 +70,7 @@ indexTpl.events({
         var rowData = dataTable.row(event.currentTarget)
             .data();
 
-        FlowRouter.go('sample.order', {customerId: rowData._id});
+        FlowRouter.go('payroll.order', {customerId: rowData._id});
     }
 });
 
@@ -104,7 +104,7 @@ insertTpl.onDestroyed(function () {
  * Update
  */
 updateTpl.onCreated(function () {
-    this.subscribe('sample_customerById', this.data._id);
+    this.subscribe('payroll_customerById', this.data._id);
     state.set('location', {
         _id: this.data.locationId,
         name: this.data._location.name
@@ -121,7 +121,7 @@ updateTpl.helpers({
     },
     data: function () {
         let data;
-        data = Sample.Collection.Customer.findOne(this._id);
+        data = Payroll.Collection.Customer.findOne(this._id);
 
         return data;
     }
@@ -141,12 +141,12 @@ updateTpl.onDestroyed(function () {
  * Show
  */
 showTpl.onCreated(function () {
-    this.subscribe('sample_customerById', this.data._id);
+    this.subscribe('payroll_customerById', this.data._id);
 });
 
 showTpl.helpers({
     data: function () {
-        let data = Sample.Collection.Customer.findOne(this._id);
+        let data = Payroll.Collection.Customer.findOne(this._id);
         data.photoUrl = null;
         if (data.photo) {
             let photo = Files.findOne(data.photo);
@@ -177,7 +177,7 @@ locationAddOnTpl.events({
  */
 AutoForm.hooks({
     // Customer
-    sample_customerInsert: {
+    payroll_customerInsert: {
         before: {
             insert: function (doc) {
                 doc.branchId = Session.get('currentBranch');
@@ -191,7 +191,7 @@ AutoForm.hooks({
             alertify.error(error.message);
         }
     },
-    sample_customerUpdate: {
+    payroll_customerUpdate: {
         onSuccess: function (formType, result) {
             alertify.customer().close();
             alertify.success('Success');

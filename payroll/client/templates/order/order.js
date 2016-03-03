@@ -1,12 +1,12 @@
 /**
  * Declare template
  */
-var indexTpl = Template.sample_order,
-    insertTpl = Template.sample_orderInsert,
-    updateTpl = Template.sample_orderUpdate,
-    showTpl = Template.sample_orderShow,
+var indexTpl = Template.payroll_order,
+    insertTpl = Template.payroll_orderInsert,
+    updateTpl = Template.payroll_orderUpdate,
+    showTpl = Template.payroll_orderShow,
 
-    customerShowTpl = Template.sample_customerShow;
+    customerShowTpl = Template.payroll_customerShow;
 
 /**
  * Index
@@ -18,7 +18,7 @@ indexTpl.onCreated(function () {
 
     // Subscription
     var customerId = FlowRouter.getParam('customerId');
-    this.subCustomer = this.subscribe('sample_customerById', customerId);
+    this.subCustomer = this.subscribe('payroll_customerById', customerId);
 });
 
 indexTpl.helpers({
@@ -47,7 +47,7 @@ indexTpl.events({
             fa("remove", "Order"),
             "Are you sure to delete [" + self._id + "]?",
             function () {
-                Sample.Collection.Order.remove(self._id, function (error) {
+                Payroll.Collection.Order.remove(self._id, function (error) {
                     if (error) {
                         alertify.error(error.message);
                     } else {
@@ -81,7 +81,7 @@ insertTpl.helpers({
  * Update
  */
 updateTpl.onCreated(function () {
-    this.subscribe('sample_orderById', this.data._id);
+    this.subscribe('payroll_orderById', this.data._id);
 });
 
 updateTpl.onRendered(function () {
@@ -90,7 +90,7 @@ updateTpl.onRendered(function () {
 
 updateTpl.helpers({
     data: function () {
-        var data = Sample.Collection.Order.findOne(this._id);
+        var data = Payroll.Collection.Order.findOne(this._id);
         data.orderDate = moment(data.orderDate).format('YYYY-MM-DD');
 
         return data;
@@ -101,12 +101,12 @@ updateTpl.helpers({
  * Show
  */
 showTpl.onCreated(function () {
-    this.subscribe('sample_orderById', this.data._id);
+    this.subscribe('payroll_orderById', this.data._id);
 });
 
 showTpl.helpers({
     data: function () {
-        var data = Sample.Collection.Order.findOne(this._id);
+        var data = Payroll.Collection.Order.findOne(this._id);
         data.desStr = Spacebars.SafeString(data.des);
         return data;
     }
@@ -115,7 +115,7 @@ showTpl.helpers({
 // Hook
 AutoForm.hooks({
     // Order
-    sample_orderInsert: {
+    payroll_orderInsert: {
         before: {
             insert: function (doc) {
                 doc.branchId = Session.get('currentBranch');
@@ -130,7 +130,7 @@ AutoForm.hooks({
             alertify.error(error.message);
         }
     },
-    sample_orderUpdate: {
+    payroll_orderUpdate: {
         docToForm: function (doc, ss) {
             doc.orderDate = moment(doc.orderDate).format('YYYY-MM-DD');
             return doc;
@@ -154,7 +154,7 @@ var configOnRendered = function () {
 // Get current customer
 var getCurrentCustomer = function () {
     var id = FlowRouter.getParam('customerId');
-    var data = Sample.Collection.Customer.findOne(id);
+    var data = Payroll.Collection.Customer.findOne(id);
     if (!_.isUndefined(data.photo)) {
         data.photoUrl = Files.findOne(data.photo).url();
     } else {

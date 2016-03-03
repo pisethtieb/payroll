@@ -1,3 +1,3 @@
 // Location
-Sample.Collection.Location.cacheTimestamp();
-Sample.Collection.Location.cacheCount('customerCount', Sample.Collection.Customer, 'locationId');
+Payroll.Collection.Location.cacheTimestamp();
+Payroll.Collection.Location.cacheCount('customerCount', Payroll.Collection.Customer, 'locationId');

@@ -1,14 +1,14 @@
 <!--Index-->
-<template name="sample_customer">
+<template name="payroll_customer">
     <p>
         <button type="button" class="btn btn-primary js-insert">{{fa "plus"}} Add New</button>
     </p>
 
-    {{> tabular table=Sample.TabularTable.Customer selector=selector class="table table-striped table-bordered table-condensed table-hover-pointer"}}
+    {{> tabular table=Payroll.TabularTable.Customer selector=selector class="table table-striped table-bordered table-condensed table-hover-pointer"}}
 </template>
 
 <!--Action-->
-<template name="sample_customerAction">
+<template name="payroll_customerAction">
     {{#tabularAction}}
         <li><a href="#" class="js-update">{{fa "pencil"}} Update</a></li>
         <li><a href="#" class="js-remove">{{fa "remove"}} Remove</a></li>
@@ -17,8 +17,8 @@
 </template>
 
 <!--Insert-->
-<template name="sample_customerInsert">
-    {{#autoForm collection=Sample.Collection.Customer id="sample_customerInsert" type="insert"}}
+<template name="payroll_customerInsert">
+    {{#autoForm collection=Payroll.Collection.Customer id="payroll_customerInsert" type="insert"}}
         <div class="row">
             <div class="col-md-6">
                 {{> afQuickField name="name"}}
@@ -56,10 +56,10 @@
 </template>
 
 <!--Update-->
-<template name="sample_customerUpdate">
+<template name="payroll_customerUpdate">
     <!--Built-in template sub ready by all-->
     {{#if Template.subscriptionsReady}}
-        {{#autoForm collection=Sample.Collection.Customer id="sample_customerUpdate" doc=data type="update"}}
+        {{#autoForm collection=Payroll.Collection.Customer id="payroll_customerUpdate" doc=data type="update"}}
             <div class="row">
                 <div class="col-md-6">
                     {{> afQuickField name="name"}}
@@ -102,7 +102,7 @@
 </template>
 
 <!--Show-->
-<template name="sample_customerShow">
+<template name="payroll_customerShow">
     <!--Customer template sub ready by all-->
     {{#if templateSubReady}}
         {{#with data}}
@@ -131,6 +131,6 @@
 </template>
 
 <!--Location add on-->
-<template name="sample_locationAddOnCustomer">
-    {{> sample_location cssClass="pointer"}}
+<template name="payroll_locationAddOnCustomer">
+    {{> payroll_location cssClass="pointer"}}
 </template>

@@ -1,4 +1,4 @@
-{{#template name="sample_helpWelcome"}}
+{{#template name="payroll_helpWelcome"}}
 
 ## Welcome
 

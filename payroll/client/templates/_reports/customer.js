@@ -1,14 +1,14 @@
 /**
  * Declare template
  */
-var formTpl = Template.sample_customerReport,
-    genTpl = Template.sample_customerReportGen;
+var formTpl = Template.payroll_customerReport,
+    genTpl = Template.payroll_customerReportGen;
 
 /**
  * Form Hooks
  */
 AutoForm.hooks({
-    sample_customerReport: {
+    payroll_customerReport: {
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
             this.event.preventDefault();
 
@@ -21,7 +21,7 @@ AutoForm.hooks({
         onSuccess: function (formType, result) {
             var params = {};
             var queryParams = result;
-            var path = FlowRouter.path("sample.customerReportGen", params, queryParams);
+            var path = FlowRouter.path("payroll.customerReportGen", params, queryParams);
 
             window.open(path, '_blank');
         },
@@ -53,7 +53,7 @@ genTpl.helpers({
 
         // Use Fetcher
         Fetcher.setDefault("data", false);
-        Fetcher.retrieve('data', 'sample_customerReport', q);
+        Fetcher.retrieve('data', 'payroll_customerReport', q);
 
         return Fetcher.get('data');
     }

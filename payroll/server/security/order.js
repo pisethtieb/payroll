@@ -1,10 +1,10 @@
 // Order
-Sample.Collection.Order.permit(['insert'])
-    .sample_ifDataInsert()
+Payroll.Collection.Order.permit(['insert'])
+    .payroll_ifDataInsert()
     .apply();
-Sample.Collection.Order.permit(['update'])
-    .sample_ifDataUpdate()
+Payroll.Collection.Order.permit(['update'])
+    .payroll_ifDataUpdate()
     .apply();
-Sample.Collection.Order.permit(['remove'])
-    .sample_ifDataRemove()
+Payroll.Collection.Order.permit(['remove'])
+    .payroll_ifDataRemove()
     .apply();

@@ -1,13 +1,13 @@
 // Namespace
-Sample = {};
+Payroll = {};
 
-Meteor.isClient && Template.registerHelper('Sample', Sample);
+Meteor.isClient && Template.registerHelper('Payroll', Payroll);
 
 /* Collection */
-Sample.Collection = {};
+Payroll.Collection = {};
 
 /* Schema */
-Sample.Schema = {};
+Payroll.Schema = {};
 
 /* Tabular */
-Sample.TabularTable = {};
+Payroll.TabularTable = {};

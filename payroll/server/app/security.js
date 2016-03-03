@@ -1,48 +1,48 @@
 /**
  * Setting
  */
-Security.defineMethod("sample_ifSetting", {
+Security.defineMethod("payroll_ifSetting", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['setting'], 'Sample');
+        return !Roles.userIsInRole(userId, ['setting'], 'Payroll');
     }
 });
 
 /**
  * Data Entry
  */
-Security.defineMethod("sample_ifDataInsert", {
+Security.defineMethod("payroll_ifDataInsert", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['data-insert'], 'Sample');
+        return !Roles.userIsInRole(userId, ['data-insert'], 'Payroll');
     }
 });
 
-Security.defineMethod("sample_ifDataUpdate", {
+Security.defineMethod("payroll_ifDataUpdate", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['data-update'], 'Sample');
+        return !Roles.userIsInRole(userId, ['data-update'], 'Payroll');
     }
 });
 
-Security.defineMethod("sample_ifDataRemove", {
+Security.defineMethod("payroll_ifDataRemove", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['data-remove'], 'Sample');
+        return !Roles.userIsInRole(userId, ['data-remove'], 'Payroll');
     }
 });
 
 /**
  * Report
  */
-Security.defineMethod("sample_ifReport", {
+Security.defineMethod("payroll_ifReport", {
     fetch: [],
     transform: null,
     deny: function (type, arg, userId) {
-        return !Roles.userIsInRole(userId, ['report'], 'Sample');
+        return !Roles.userIsInRole(userId, ['report'], 'Payroll');
     }
 });

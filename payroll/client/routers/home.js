@@ -1,8 +1,8 @@
-sampleRoutes.route('/home', {
-    name: 'sample.home',
+payrollRoutes.route('/home', {
+    name: 'payroll.home',
     title: 'Home',
     action: function (params, queryParams) {
-        Layout.main('sample_home');
+        Layout.main('payroll_home');
     },
     breadcrumb: {
         //params: ['id'],

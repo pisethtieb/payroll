@@ -1,7 +1,7 @@
 /**
  * Declare template
  */
-var formTpl = Template.sample_customerExcelReport;
+var formTpl = Template.payroll_customerExcelReport;
 
 /**
  * Form
@@ -15,12 +15,12 @@ formTpl.onRendered(function () {
  * Hook
  */
 AutoForm.hooks({
-    sample_customerExcelReport: {
+    payroll_customerExcelReport: {
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
 
             console.log(insertDoc);
 
-            Meteor.call('sample_customerExcel', insertDoc, function (err, fileUrl) {
+            Meteor.call('payroll_customerExcel', insertDoc, function (err, fileUrl) {
 
                 console.log(fileUrl);
 

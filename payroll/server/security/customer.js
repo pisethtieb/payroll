@@ -1,10 +1,10 @@
 // Customer
-Sample.Collection.Customer.permit(['insert'])
-    .sample_ifDataInsert()
+Payroll.Collection.Customer.permit(['insert'])
+    .payroll_ifDataInsert()
     .apply();
-Sample.Collection.Customer.permit(['update'])
-    .sample_ifDataUpdate()
+Payroll.Collection.Customer.permit(['update'])
+    .payroll_ifDataUpdate()
     .apply();
-Sample.Collection.Customer.permit(['remove'])
-    .sample_ifDataRemove()
+Payroll.Collection.Customer.permit(['remove'])
+    .payroll_ifDataRemove()
     .apply();

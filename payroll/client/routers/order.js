@@ -1,22 +1,22 @@
 var subs = new SubsManager();
 
-sampleRoutes.route('/order/:customerId', {
-    name: 'sample.order',
+payrollRoutes.route('/order/:customerId', {
+    name: 'payroll.order',
     title: 'Order',
     subscriptions: function (params, queryParams) {
         // Order
         //this.register(
-        //    'sample_orderByCustomer',
-        //    subs.subscribe('sample_orderByCustomer', params.customerId)
+        //    'payroll_orderByCustomer',
+        //    subs.subscribe('payroll_orderByCustomer', params.customerId)
         //);
     },
     action: function (params, queryParams) {
-        Layout.main('sample_order');
+        Layout.main('payroll_order');
     },
     breadcrumb: {
         params: ['customerId'],
         //queryParams: ['show', 'color'],
         title: 'Order',
-        parent: 'sample.customer'
+        parent: 'payroll.customer'
     }
 });

@@ -1,5 +1,5 @@
 // Publication
-//Meteor.publish('sample_customer', function (branchId) {
+//Meteor.publish('payroll_customer', function (branchId) {
 //    this.unblock();
 //    if (this.userId) {
 //        var selector = {};
@@ -7,18 +7,18 @@
 //            selector.branchId = branchId;
 //        }
 //
-//        return Sample.Collection.Customer.find(selector, {removed: true});
+//        return Payroll.Collection.Customer.find(selector, {removed: true});
 //    }
 //
 //    this.ready();
 //});
 
-Meteor.publish('sample_customerById', function (id) {
+Meteor.publish('payroll_customerById', function (id) {
     this.unblock();
     if (this.userId) {
         check(id, String);
 
-        return Sample.Collection.Customer.find({_id: id});
+        return Payroll.Collection.Customer.find({_id: id});
     }
 
     this.ready();

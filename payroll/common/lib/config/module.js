@@ -2,10 +2,10 @@
 Module = typeof Module === 'undefined' ? {} : Module;
 Meteor.isClient && Template.registerHelper('Module', Module);
 
-Module.Sample = {
-    name: 'Sample System',
+Module.Payroll = {
+    name: 'Payroll System',
     version: '0.0.1',
-    summary: 'Sample Management System is ...',
+    summary: 'Payroll Management System is ...',
     roles: [
         'setting',
         'data-insert',
@@ -15,11 +15,11 @@ Module.Sample = {
     ],
     dump: {
         setting: [
-            'sample_location'
+            'payroll_location'
         ],
         data: [
-            'sample_customer',
-            'sample_order'
+            'payroll_customer',
+            'payroll_order'
         ]
     }
 };

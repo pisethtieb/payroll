@@ -1,18 +1,18 @@
 var subs = new SubsManager();
 
-sampleRoutes.route('/location', {
-    name: 'sample.location',
+payrollRoutes.route('/location', {
+    name: 'payroll.location',
     title: 'Location',
     subscriptions: function (params, queryParams) {
-        //this.register('sample_location', subs.subscribe('sample_location'));
+        //this.register('payroll_location', subs.subscribe('payroll_location'));
     },
     action: function (params, queryParams) {
-        Layout.main('sample_location');
+        Layout.main('payroll_location');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Location',
-        parent: 'sample.home'
+        parent: 'payroll.home'
     }
 });

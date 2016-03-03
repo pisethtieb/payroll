@@ -1,40 +1,40 @@
 /**
  * Browser view
  */
-sampleRoutes.route('/customerReport', {
-    name: 'sample.customerReport',
+payrollRoutes.route('/customerReport', {
+    name: 'payroll.customerReport',
     title: "Customer Report",
     action: function (params, queryParams) {
-        Layout.main('sample_customerReport');
+        Layout.main('payroll_customerReport');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Customer Report',
-        parent: 'sample.home'
+        parent: 'payroll.home'
     }
 });
 
-sampleRoutes.route('/customerReportGen', {
-    name: 'sample.customerReportGen',
+payrollRoutes.route('/customerReportGen', {
+    name: 'payroll.customerReportGen',
     title: "Customer Report",
     action: function (params, queryParams) {
-        Layout.report('sample_customerReportGen');
+        Layout.report('payroll_customerReportGen');
     }
 });
 
 /**
  * Excel
  */
-sampleRoutes.route('/customerExcelReport', {
-    name: 'sample.customerExcelReport',
+payrollRoutes.route('/customerExcelReport', {
+    name: 'payroll.customerExcelReport',
     action: function (params, queryParams) {
-        Layout.main('sample_customerExcelReport');
+        Layout.main('payroll_customerExcelReport');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Customer Excel Report',
-        parent: 'sample.home'
+        parent: 'payroll.home'
     }
 });

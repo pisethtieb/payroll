@@ -400,3 +400,11 @@ var currentDate = ReactiveMethod.call("currentDate"); // 'YYYY-MM-DD HH:mm:ss'
     - Cpanel.Collection.User() -> `global sub`
     - Cpanel.Collection.Exchange()
     - Files() -> `global sub` (collection for managing file upload like images, pdf ...)
+## payroll management database
++Departments
+    -_id
+    -branchId
+    -name
+    -overtimeStatus
+    -Rate(overtime/hour)គីតជាប្រាកក្នុងមួយមោង
++

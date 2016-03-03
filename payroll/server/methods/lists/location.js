@@ -3,7 +3,7 @@ Meteor.methods({
         check(params, String);
 
         var list = [];
-        Sample.Collection.Location.find({
+        Payroll.Collection.Location.find({
             $or: [
                 {_id: {'$regex': params, '$options': 'i'}},
                 {name: {'$regex': params, '$options': 'i'}}

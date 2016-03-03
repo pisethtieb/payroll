@@ -1,14 +1,14 @@
 <!--Index-->
-<template name="sample_location">
+<template name="payroll_location">
     <p>
         <button type="button" class="btn btn-primary js-insert">{{fa "plus"}} Add New</button>
     </p>
 
-    {{> tabular table=Sample.TabularTable.Location selector=selector class=tabularClass}}
+    {{> tabular table=Payroll.TabularTable.Location selector=selector class=tabularClass}}
 </template>
 
 <!--Action-->
-<template name="sample_locationAction">
+<template name="payroll_locationAction">
     {{#tabularAction}}
         <li><a href="#" class="js-update">{{fa "pencil"}} Edit</a></li>
         <li><a href="#" class="js-remove">{{fa "remove"}} Remove</a></li>
@@ -17,8 +17,8 @@
 </template>
 
 <!--Insert-->
-<template name="sample_locationInsert">
-    {{#autoForm collection=Sample.Collection.Location id="sample_locationInsert" type="insert"}}
+<template name="payroll_locationInsert">
+    {{#autoForm collection=Payroll.Collection.Location id="payroll_locationInsert" type="insert"}}
         <div class="row">
             <div class="col-md-12">
                 {{> afQuickField name='name'}}
@@ -30,10 +30,10 @@
 </template>
 
 <!--Update-->
-<template name="sample_locationUpdate">
+<template name="payroll_locationUpdate">
     <!--Custom template sub ready by name-->
     {{#if templateSubReady "subLocation"}}
-        {{#autoForm collection=Sample.Collection.Location id="sample_locationUpdate" doc=data type="update"}}
+        {{#autoForm collection=Payroll.Collection.Location id="payroll_locationUpdate" doc=data type="update"}}
             <div class="row">
                 <div class="col-md-12">
                     {{> afQuickField name='name'}}
@@ -48,7 +48,7 @@
 </template>
 
 <!--Show-->
-<template name="sample_locationShow">
+<template name="payroll_locationShow">
     <!--Custom template sub ready by name-->
     {{#if templateSubReady "subLocation"}}
         {{#with data}}

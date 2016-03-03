@@ -1,6 +1,6 @@
 <!--Form-->
-<template name="sample_customerReport">
-    {{#autoForm schema=Sample.Schema.CustomerReport id="sample_customerReport" type="normal"}}
+<template name="payroll_customerReport">
+    {{#autoForm schema=Payroll.Schema.CustomerReport id="payroll_customerReport" type="normal"}}
         <div class="row">
             <div class="col-md-6">
                 {{> afQuickField name="branch"}}
@@ -17,7 +17,7 @@
 </template>
 
 <!--Generate-->
-<template name="sample_customerReportGen">
+<template name="payroll_customerReportGen">
     <!--Is ready-->
     {{#if data}}
         {{#reportTpl options}}

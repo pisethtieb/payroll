@@ -1,8 +1,8 @@
 // Collection
-Sample.Collection.Customer = new Mongo.Collection("sample_customer");
+Payroll.Collection.Customer = new Mongo.Collection("payroll_customer");
 
 // Schema
-Sample.Schema.Customer = new SimpleSchema({
+Payroll.Schema.Customer = new SimpleSchema({
     name: {
         type: String,
         label: "Name"
@@ -13,7 +13,7 @@ Sample.Schema.Customer = new SimpleSchema({
         autoform: {
             type: "select2",
             options: function () {
-                return Sample.List.gender();
+                return Payroll.List.gender();
             },
             afFieldInput: {
                 select2Options: {
@@ -70,7 +70,7 @@ Sample.Schema.Customer = new SimpleSchema({
 });
 
 // Attach schema
-Sample.Collection.Customer.attachSchema(Sample.Schema.Customer);
+Payroll.Collection.Customer.attachSchema(Payroll.Schema.Customer);
 
 // Attach soft remove
-//Sample.Collection.Customer.attachBehaviour('softRemovable');
+//Payroll.Collection.Customer.attachBehaviour('softRemovable');

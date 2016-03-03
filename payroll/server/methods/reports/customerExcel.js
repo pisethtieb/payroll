@@ -1,5 +1,5 @@
 Meteor.methods({
-    sample_customerExcel: function (params) {
+    payroll_customerExcel: function (params) {
         var Future = Npm.require('fibers/future');
         var futureResponse = new Future();
 
@@ -18,7 +18,7 @@ Meteor.methods({
 
         // Example : writing multiple rows to file
         var row = 2;
-        Sample.Collection.Customer.find({}).forEach(function (obj) {
+        Payroll.Collection.Customer.find({}).forEach(function (obj) {
             worksheet.writeToCell(row, 0, obj.name);
             worksheet.writeToCell(row, 1, obj.gender);
 
@@ -60,7 +60,7 @@ Meteor.methods({
     //    var fs = Npm.require('fs');
     //    var path = Npm.require('path');
     //    var basepath = path.resolve('.').split('.meteor')[0];
-    //    var yourFile = basepath + 'sample/server/test.xlsx';
+    //    var yourFile = basepath + 'payroll/server/test.xlsx';
     //
     //    var Excel = Meteor.npmRequire('xlsx');
     //

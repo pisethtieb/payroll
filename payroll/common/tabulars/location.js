@@ -1,7 +1,7 @@
 // Location
-Sample.TabularTable.Location = new Tabular.Table({
-    name: "sample_locationList",
-    collection: Sample.Collection.Location,
+Payroll.TabularTable.Location = new Tabular.Table({
+    name: "payroll_locationList",
+    collection: Payroll.Collection.Location,
     pagingType: "full_numbers",
     autoWidth: false,
     columnDefs: [
@@ -9,7 +9,7 @@ Sample.TabularTable.Location = new Tabular.Table({
     ],
     order: [['1', 'desc']],
     columns: [
-        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.sample_locationAction},
+        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.payroll_locationAction},
         {data: "_id", title: "ID"},
         {data: "name", title: "Name"},
         {data: "_customerCount", title: "Customer Count"}

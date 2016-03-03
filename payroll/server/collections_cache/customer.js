@@ -1,3 +1,3 @@
 // Collection
-Sample.Collection.Customer.cacheTimestamp();
-Sample.Collection.Customer.cacheDoc('location', Sample.Collection.Location, ['name']);
+Payroll.Collection.Customer.cacheTimestamp();
+Payroll.Collection.Customer.cacheDoc('location', Payroll.Collection.Location, ['name']);

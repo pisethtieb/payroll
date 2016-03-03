@@ -1,8 +1,8 @@
 // Collection
-Sample.Collection.Location = new Mongo.Collection("sample_location");
+Payroll.Collection.Location = new Mongo.Collection("payroll_location");
 
 // Schema
-Sample.Schema.Location = new SimpleSchema({
+Payroll.Schema.Location = new SimpleSchema({
     name: {
         type: String,
         label: "Location"
@@ -10,7 +10,7 @@ Sample.Schema.Location = new SimpleSchema({
 });
 
 // Attach schema
-Sample.Collection.Location.attachSchema(Sample.Schema.Location);
+Payroll.Collection.Location.attachSchema(Payroll.Schema.Location);
 
 // Attach soft remove
-//Sample.Collection.Location.attachBehaviour('softRemovable');
+//Payroll.Collection.Location.attachBehaviour('softRemovable');

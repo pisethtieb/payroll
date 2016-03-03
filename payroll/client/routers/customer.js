@@ -1,19 +1,19 @@
 var subs = new SubsManager();
 
-sampleRoutes.route('/customer', {
-    name: 'sample.customer',
+payrollRoutes.route('/customer', {
+    name: 'payroll.customer',
     title: "Customer",
     subscriptions: function (params, queryParams) {
         // Customer
-        //this.register('sample_customer', subs.subscribe('sample_customer', Session.get('currentBranch')));
+        //this.register('payroll_customer', subs.subscribe('payroll_customer', Session.get('currentBranch')));
     },
     action: function (params, queryParams) {
-        Layout.main('sample_customer');
+        Layout.main('payroll_customer');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Customer',
-        parent: 'sample.home'
+        parent: 'payroll.home'
     }
 });

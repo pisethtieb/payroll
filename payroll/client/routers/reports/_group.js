@@ -1,9 +1,9 @@
-sampleRoutes = FlowRouter.group({
+payrollRoutes = FlowRouter.group({
     prefix: '/payroll',
     //subscriptions: function (params, queryParams) {
     //    // Global subscriptions for route group
-    //    this.register('sample_address', Meteor.subscribe('sample_address'));
+    //    this.register('payroll_address', Meteor.subscribe('payroll_address'));
     //}
-    title: "Sample",
-    titlePrefix: 'Sample > '
+    title: "Payroll",
+    titlePrefix: 'Payroll > '
 });

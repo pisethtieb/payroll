@@ -1,10 +1,10 @@
 /**
  * Declare template
  */
-var indexTpl = Template.sample_location,
-    insertTpl = Template.sample_locationInsert,
-    updateTpl = Template.sample_locationUpdate,
-    showTpl = Template.sample_locationShow;
+var indexTpl = Template.payroll_location,
+    insertTpl = Template.payroll_locationInsert,
+    updateTpl = Template.payroll_locationUpdate,
+    showTpl = Template.payroll_locationShow;
 
 /**
  * Index
@@ -43,7 +43,7 @@ indexTpl.events({
             fa("remove", "Location"),
             "Are you sure to delete [" + self._id + "]?",
             function () {
-                Sample.Collection.Location.remove(self._id, function (error) {
+                Payroll.Collection.Location.remove(self._id, function (error) {
                     if (error) {
                         alertify.error(error.message);
                     } else {
@@ -68,12 +68,12 @@ indexTpl.events({
  * Update
  */
 updateTpl.onCreated(function () {
-    this.subLocation = this.subscribe('sample_locationById', this.data._id);
+    this.subLocation = this.subscribe('payroll_locationById', this.data._id);
 });
 
 updateTpl.helpers({
     data: function () {
-        var data = Sample.Collection.Location.findOne(this._id);
+        var data = Payroll.Collection.Location.findOne(this._id);
         return data;
     }
 });
@@ -82,12 +82,12 @@ updateTpl.helpers({
  * Show
  */
 showTpl.onCreated(function () {
-    this.subLocation = this.subscribe('sample_locationById', this.data._id);
+    this.subLocation = this.subscribe('payroll_locationById', this.data._id);
 });
 
 showTpl.helpers({
     data: function () {
-        var data = Sample.Collection.Location.findOne(this._id);
+        var data = Payroll.Collection.Location.findOne(this._id);
         return data;
     }
 });
@@ -96,7 +96,7 @@ showTpl.helpers({
  * Hook
  */
 AutoForm.hooks({
-    sample_locationInsert: {
+    payroll_locationInsert: {
         before: {
             insert: function (doc) {
                 return doc;
@@ -109,7 +109,7 @@ AutoForm.hooks({
             alertify.error(error.message);
         }
     },
-    sample_locationUpdate: {
+    payroll_locationUpdate: {
         onSuccess: function (formType, result) {
             alertify.location().close();
             alertify.success('Success');

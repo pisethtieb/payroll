@@ -1,8 +1,8 @@
 var branchId = '001';
 
-Factory.define('location', Sample.Collection.Location, {
+Factory.define('location', Payroll.Collection.Location, {
     _id: function () {
-        var locationId = idGenerator.gen(Sample.Collection.Location, 4);
+        var locationId = idGenerator.gen(Payroll.Collection.Location, 4);
         return locationId;
     },
     name: function () {
@@ -10,9 +10,9 @@ Factory.define('location', Sample.Collection.Location, {
     }
 });
 
-Factory.define('customer', Sample.Collection.Customer, {
+Factory.define('customer', Payroll.Collection.Customer, {
     _id: function () {
-        var customerId = idGenerator.genWithPrefix(Sample.Collection.Customer, branchId + '-', 6);
+        var customerId = idGenerator.genWithPrefix(Payroll.Collection.Customer, branchId + '-', 6);
         return customerId;
     },
     name: function () {

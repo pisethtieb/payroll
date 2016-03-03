@@ -1,3 +1,3 @@
 // Collection
-Sample.Collection.Order.cacheTimestamp();
-Sample.Collection.Order.cacheDoc('customer', Sample.Collection.Customer, ['name', 'gender', '_address']);
+Payroll.Collection.Order.cacheTimestamp();
+Payroll.Collection.Order.cacheDoc('customer', Payroll.Collection.Customer, ['name', 'gender', '_address']);

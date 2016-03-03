@@ -1,5 +1,5 @@
 // List for report
-Sample.ListForReport = {
+Payroll.ListForReport = {
     branch: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});

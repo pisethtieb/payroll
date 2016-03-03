@@ -1,1 +1,1 @@
-Template.sample_home.helpers({});
+Template.payroll_home.helpers({});

@@ -1,11 +1,11 @@
 // Schema
-Sample.Schema.CustomerReport = new SimpleSchema({
+Payroll.Schema.CustomerReport = new SimpleSchema({
     branch: {
         type: String,
         autoform: {
             type: "select2",
             options: function () {
-                return Sample.ListForReport.branch();
+                return Payroll.ListForReport.branch();
             },
             afFieldInput: {
                 select2Options: {
